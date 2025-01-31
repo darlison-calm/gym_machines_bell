@@ -1,0 +1,3 @@
+/home/darlison/Code/pico/gym_machines/build/pioasm/CMakeFiles/pioasm.dir
+/home/darlison/Code/pico/gym_machines/build/pioasm/CMakeFiles/edit_cache.dir
+/home/darlison/Code/pico/gym_machines/build/pioasm/CMakeFiles/rebuild_cache.dir
