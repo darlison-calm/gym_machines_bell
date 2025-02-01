@@ -45,6 +45,8 @@
 
 /*VARIAVEIS*/
 
+
+
 extern bool alarme;
 extern bool posicao_js;
 extern bool ledverdestatus;
@@ -72,19 +74,14 @@ void initialize_machines();
 void play_alarm(uint32_t frequency, uint32_t duration_ms);
 void handle_machine_interrupt(uint gpio, uint32_t events);
 void process_machine_request();
-void run_main_loop();
+void init_leds();
 
 
 static MQTT_CLIENT_T* mqtt_client_init(void);
 void run_dns_lookup(MQTT_CLIENT_T *state);
 void mqtt_run_test(MQTT_CLIENT_T *state);
-void gpio_event_string(char *buf, uint32_t events);
-void js();
-void setup_pwm(uint gpio_pin);
-void update_pwm(uint gpio_pin);
-void pwm_led(uint gpio_pin, uint brilho);
 
 
-void pinos_start();
-void gpio5_callback(uint gpio, uint32_t events);
+
+
 /* END */

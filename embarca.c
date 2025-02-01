@@ -3,11 +3,28 @@ uint32_t waiting_queue = 0;
 uint32_t last_debounce_timer[MAX_MACHINES]; 
 MACHINE machines[MAX_MACHINES];
 
+err_t mqtt_test_connect(MQTT_CLIENT_T *state);
+
 static uint triggered_machine = 0;
 static volatile bool interrupt_flag = false;
 
+#define PUB_DELAY_MS 1000
+static uint32_t counter = 0;
+static uint32_t last_time = 0;
+
+void init_leds() {
+    gpio_init(LED_PIN_B);
+    gpio_set_dir(LED_PIN_B, GPIO_OUT);
+    gpio_put(LED_PIN_G, 0);
+    
+    gpio_init(LED_PIN_R);
+    gpio_set_dir(LED_PIN_R, GPIO_OUT);
+    gpio_put(LED_PIN_R, 0);
+}
+
 // Função para inicializar as máquinas
 void initialize_machines() {
+    init_leds();
     // Nomes das máquinas e os pinos GPIO correspondentes
     const char *names[] = {"Mesa Flexora", "Agachamento no Hack", "Leg Press"};
     int gpio_pins[] = {5, 6, 22};
@@ -52,8 +69,6 @@ void handle_machine_interrupt(uint gpio, uint32_t events) {
         
         // Verifica debounce
         if (now - last_debounce_timer[i] <= DEBOUNCE_DELAY_MS) continue;
-         // Verifica se já precisa de assistência
-        if (machines[i].needs_assistance) continue;
 
         last_debounce_timer[i] = now; // Atualiza o tempo de debounce
         triggered_machine = i;
@@ -80,217 +95,180 @@ void process_machine_request() {
     
     play_alarm(220, 300);
     interrupt_flag = false;  // Reset da flag após processamento
+    
 }
 
-void run_main_loop() {
-    while(true) {
-        if (interrupt_flag) {
-            process_machine_request();
-        }
-        sleep_ms(10);
+void dns_found(const char *name, const ip_addr_t *ipaddr, void *callback_arg) {
+    MQTT_CLIENT_T *state = (MQTT_CLIENT_T*)callback_arg;
+    if (ipaddr) {
+        state->remote_addr = *ipaddr;
+        DEBUG_printf("DNS resolved: %s\n", ip4addr_ntoa(ipaddr));
+    } else {
+        DEBUG_printf("DNS resolution failed.\n");
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-static uint32_t last_debounce_time[3] = {0, 0, 0};
-uint adc_x_raw;
-uint adc_y_raw;
-uint brightness = 0;
-bool increasing = true; 
-
-
-static const char *gpio_irq_str[] = {
-        "LEVEL_LOW",  // 0x1
-        "LEVEL_HIGH", // 0x2
-        "EDGE_FALL",  // 0x4
-        "EDGE_RISE"   // 0x8
-};
-
-void pinos_start()
-{
-    gpio_init(LED_PIN_R);
-    gpio_init(LED_PIN_B);
-    gpio_init(LED_PIN_G);
-    adc_init();
-    adc_gpio_init(26);
-    adc_gpio_init(27);
-    gpio_set_function(LED_PIN_R, GPIO_FUNC_PWM);
-    gpio_set_function(LED_PIN_G, GPIO_FUNC_PWM);
-    gpio_set_function(LED_PIN_B, GPIO_FUNC_PWM);
-    uint slice_num = pwm_gpio_to_slice_num(LED_PIN_R);
-    pwm_config config = pwm_get_default_config();
-    pwm_config_set_clkdiv(&config, 4.0f);
-    pwm_init(slice_num, &config, true);
-    slice_num = pwm_gpio_to_slice_num(LED_PIN_B);
-    pwm_init(slice_num, &config, true);
-    slice_num = pwm_gpio_to_slice_num(LED_PIN_G);
-    pwm_init(slice_num, &config, true);
-    
-
-    gpio_init(BUTTON6_PIN);
-    gpio_set_dir(BUTTON6_PIN, GPIO_IN);
-    gpio_pull_up(BUTTON6_PIN);
-    gpio_set_irq_enabled_with_callback(BUTTON6_PIN,GPIO_IRQ_EDGE_FALL, true, &gpio5_callback);
-    
-    gpio_init(BUTTON5_PIN);
-    gpio_set_dir(BUTTON5_PIN, GPIO_IN);
-    gpio_pull_up(BUTTON5_PIN);
-    gpio_set_irq_enabled_with_callback(BUTTON5_PIN,GPIO_IRQ_EDGE_FALL, true, &gpio5_callback);
-
-    gpio_init(BUTTONJS_PIN);
-    gpio_set_dir(BUTTONJS_PIN, GPIO_IN);
-    gpio_pull_up(BUTTONJS_PIN);
-    gpio_set_irq_enabled_with_callback(BUTTONJS_PIN,GPIO_IRQ_EDGE_FALL, true, &gpio5_callback);
-}
-
-void gpio_event_string(char *buf, uint32_t events) {
-    for (uint i = 0; i < 4; i++) {
-        uint mask = (1 << i);
-        if (events & mask) {
-            // Copy this event string into the user string
-            const char *event_str = gpio_irq_str[i];
-            while (*event_str != '\0') {
-                *buf++ = *event_str++;
-            }
-            events &= ~mask;
-
-            // If more events add ", "
-            if (events) {
-                *buf++ = ',';
-                *buf++ = ' ';
-            }
+void run_dns_lookup(MQTT_CLIENT_T *state) {
+    DEBUG_printf("Running DNS lookup for %s...\n", MQTT_SERVER_HOST);
+    if (dns_gethostbyname(MQTT_SERVER_HOST, &(state->remote_addr), dns_found, state) == ERR_INPROGRESS) {
+        while (state->remote_addr.addr == 0) {
+            cyw43_arch_poll();
+            sleep_ms(10);
         }
     }
-    *buf++ = '\0';
 }
 
-void gpio5_callback(uint gpio, uint32_t events) {
-    uint32_t now = to_ms_since_boot(get_absolute_time());
-
-    if (gpio == 5 && (now - last_debounce_time[0] > DEBOUNCE_DELAY_MS)) 
-    {
-        last_debounce_time[0] = now;
-        
-    }
-    if (gpio == 6 && (now - last_debounce_time[1] > DEBOUNCE_DELAY_MS)) 
-    {
-        last_debounce_time[1] = now;
-       
-    }
-    if (gpio == 22 && (now - last_debounce_time[2] > DEBOUNCE_DELAY_MS)) 
-    {
-        last_debounce_time[2] = now;
-        printf("posicao_js: %u\n", posicao_js);
-    }
+static void mqtt_pub_start_cb(void *arg, const char *topic, u32_t tot_len) {
+    DEBUG_printf("Incoming message on topic: %s\n", topic);
 }
 
-// void gpio_callback(uint gpio_pin) {
-//     for (int i = 0; i < MAX_MACHINES; i++) {
-//         uint32_t now = to_ms_since_boot(get_absolute_time());
-//         if (machines[i].gpio_pin == gpio_pin && !machines[i].attended) {
-//             waiting_queue++;
-//             printf("A máquina '%s' foi chamada para o atendimento.\n", machines[i].name);
-//             printf("Numero de pessoas na fila:  %i", waiting_queue);
-//             machines[i].needs_assistance = true; // Marca a máquina como atendida
+// * MEXER DEPOIS *
+// static void mqtt_pub_data_cb(void *arg, const u8_t *data, u16_t len, u8_t flags) {
+//     char buffer[BUFFER_SIZE];
+//     if (len < BUFFER_SIZE) {
+//         memcpy(buffer, data, len);
+//         buffer[len] = '\0';
+//         DEBUG_printf("Message received: %s\n", buffer);
+//         if (strcmp(buffer, "acender") == 0) {
+//             pwm_led(LED_PIN_B, 2000);
+//         } else if (strcmp(buffer, "apagar") == 0) {
+//             pwm_led(LED_PIN_B, 0);
 //         }
+//     } else {
+//         DEBUG_printf("Message too large, discarding.\n");
 //     }
 // }
 
-
-void js()
-{
-    adc_select_input(0);
-    adc_x_raw = adc_read();
-    printf("Posicao eixo X: %u\n",adc_x_raw);
-    adc_select_input(1);
-    adc_y_raw = adc_read();
-    printf("Posicao eixo Y: %u\n",adc_y_raw);
-    sleep_ms(50);
+static void mqtt_connection_cb(mqtt_client_t *client, void *arg, mqtt_connection_status_t status) {
+    if (status == MQTT_CONNECT_ACCEPTED) {
+        gpio_put(LED_PIN_G, 1);
+        DEBUG_printf("MQTT connected.\n");
+    } else {
+        gpio_put(LED_PIN_R, 1);
+        DEBUG_printf("MQTT connection failed: %d\n", status);
+    }
 }
 
-void setup_pwm(uint gpio_pin) {
-    // Configurar o GPIO como saída de PWM
-    gpio_set_function(gpio_pin, GPIO_FUNC_PWM);
-
-    // Obter o slice de PWM associado ao pino
-    uint slice_num = pwm_gpio_to_slice_num(gpio_pin);
-
-    // Configurar o PWM com o padrão
-    pwm_config config = pwm_get_default_config();
-    pwm_config_set_clkdiv(&config, 4.0f);  // Ajustar divisor de clock (frequência do PWM)
-    pwm_init(slice_num, &config, true);
+void mqtt_pub_request_cb(void *arg, err_t err) {
+    DEBUG_printf("Publish request status: %d\n", err);
 }
 
-void update_pwm(uint gpio_pin) {
-    // Atualizar o duty cycle baseado no brilho atual
-    pwm_set_gpio_level(LED_PIN_R, brightness);
-    printf("brilho_led_vermelho: %u\n",brightness);
-    // Atualizar o valor do brilho
-    if (increasing) 
-    {
-        brightness = brightness+400;
-        if (brightness >= PWM_STEPS) 
-        {
-            increasing = false; // Começar a diminuir
+void mqtt_sub_request_cb(void *arg, err_t err) {
+    DEBUG_printf("Subscription request status: %d\n", err);
+}
+
+err_t mqtt_test_publish(MQTT_CLIENT_T *state) {
+    uint32_t now = to_ms_since_boot(get_absolute_time());
+    
+    if (now - last_time < PUB_DELAY_MS) return 1;
+    
+    if(!interrupt_flag) return 2;
+
+    // Verifica se já precisa de assistência
+    if (machines[triggered_machine].needs_assistance) return 3; 
+
+    last_time = now;
+    waiting_queue++;
+    counter += 1;
+    interrupt_flag = false; // Reset da flag após processamento
+    machines[triggered_machine].needs_assistance = true;
+
+    char buffer[BUFFER_SIZE];
+    
+    // Publica mensagem sobre a máquina chamada
+    play_alarm(220, 300);
+        
+    snprintf(buffer, BUFFER_SIZE, "A máquina '%s' foi chamada para o atendimento.", 
+                machines[triggered_machine].name);
+    mqtt_publish(state->mqtt_client, "pico_w/test", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
+
+    // Publica o status da máquina
+    snprintf(buffer, BUFFER_SIZE, "{\"machine\": \"%s\", \"needs_assistance\": true, \"queue\": %u}",
+            machines[triggered_machine].name, waiting_queue);
+    mqtt_publish(state->mqtt_client, "pico_w/machine/json", buffer, 
+                strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
+    return mqtt_publish(state->mqtt_client, "pico_w/test", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
+}
+
+
+err_t mqtt_test_connect(MQTT_CLIENT_T *state) {
+    struct mqtt_connect_client_info_t ci = {0};
+    ci.client_id = "PicoW";
+    return mqtt_client_connect(state->mqtt_client, &(state->remote_addr), MQTT_SERVER_PORT, mqtt_connection_cb, state, &ci);
+}
+
+void mqtt_run_test(MQTT_CLIENT_T *state) {
+    state->mqtt_client = mqtt_client_new();
+    if (!state->mqtt_client) {
+        DEBUG_printf("Failed to create MQTT client\n");
+        return;
+    }
+
+    if (mqtt_test_connect(state) == ERR_OK) {
+         // mqtt_set_inpub_callback(state->mqtt_client, mqtt_pub_start_cb, mqtt_pub_data_cb, NULL);
+        // mqtt_sub_unsub(state->mqtt_client, "pico_w/recv", 0, mqtt_sub_request_cb, NULL, 1);
+
+        while (1) {
+            cyw43_arch_poll();
+            if (mqtt_client_is_connected(state->mqtt_client)) {
+                mqtt_test_publish(state);
+            } else {
+                DEBUG_printf("Reconnecting...\n");
+                sleep_ms(250);
+                mqtt_test_connect(state);
+            }
         }
     }
-    else 
-    {
-        brightness = brightness-400;
-        if (brightness == 0) {
-            increasing = true; // Começar a aumentar
-        }
-    }
 }
 
-void pwm_led(uint gpio_pin, uint brilho)
-{
-    if(gpio_pin == LED_PIN_B)
-    {
-        pwm_set_gpio_level(LED_PIN_B, brilho);
-    }
-    else if (gpio_pin == LED_PIN_G)
-    {
-        pwm_set_gpio_level(LED_PIN_G, brilho);
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
