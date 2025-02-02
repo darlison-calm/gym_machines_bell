@@ -16,6 +16,8 @@
 #include "hardware/structs/rosc.h"
 
 #define MAX_MACHINES 3
+#define WIFI_SSID "teste"
+#define WIFI_PASSWORD "12345678"
 
 /* MACROS PI PICO */
 #define LED_PIN_G 11
@@ -38,7 +40,7 @@
 /* MACROS MQTT */
 #define DEBUG_printf printf
 #define MQTT_SERVER_HOST "0.tcp.sa.ngrok.io"
-#define MQTT_SERVER_PORT 13795
+#define MQTT_SERVER_PORT 12527
 #define MQTT_TLS 0
 #define BUFFER_SIZE 256
 /* END*/
@@ -75,6 +77,7 @@ void play_alarm(uint32_t frequency, uint32_t duration_ms);
 void handle_machine_interrupt(uint gpio, uint32_t events);
 void process_machine_request();
 void init_leds();
+void connection_status_alert(bool success);
 
 
 static MQTT_CLIENT_T* mqtt_client_init(void);

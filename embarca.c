@@ -13,18 +13,15 @@ static uint32_t counter = 0;
 static uint32_t last_time = 0;
 
 void init_leds() {
-    gpio_init(LED_PIN_B);
-    gpio_set_dir(LED_PIN_B, GPIO_OUT);
-    gpio_put(LED_PIN_G, 0);
-    
+    gpio_init(LED_PIN_G);
+    gpio_set_dir(LED_PIN_G, GPIO_OUT);
     gpio_init(LED_PIN_R);
-    gpio_set_dir(LED_PIN_R, GPIO_OUT);
-    gpio_put(LED_PIN_R, 0);
+    gpio_set_dir(LED_PIN_R, GPIO_OUT); 
 }
 
 // Função para inicializar as máquinas
 void initialize_machines() {
-    init_leds();
+  
     // Nomes das máquinas e os pinos GPIO correspondentes
     const char *names[] = {"Mesa Flexora", "Agachamento no Hack", "Leg Press"};
     int gpio_pins[] = {5, 6, 22};
@@ -141,10 +138,10 @@ static void mqtt_pub_start_cb(void *arg, const char *topic, u32_t tot_len) {
 
 static void mqtt_connection_cb(mqtt_client_t *client, void *arg, mqtt_connection_status_t status) {
     if (status == MQTT_CONNECT_ACCEPTED) {
-        gpio_put(LED_PIN_G, 1);
+        connection_status_alert(true);
         DEBUG_printf("MQTT connected.\n");
     } else {
-        gpio_put(LED_PIN_R, 1);
+         connection_status_alert(false);
         DEBUG_printf("MQTT connection failed: %d\n", status);
     }
 }
@@ -158,26 +155,30 @@ void mqtt_sub_request_cb(void *arg, err_t err) {
 }
 
 err_t mqtt_test_publish(MQTT_CLIENT_T *state) {
+    // Obtém o tempo atual em milissegundos desde a inicialização
     uint32_t now = to_ms_since_boot(get_absolute_time());
     
+    // Evita publicações muito frequentes
     if (now - last_time < PUB_DELAY_MS) return 1;
     
+    // Verifica se a interrupção foi acionada
     if(!interrupt_flag) return 2;
 
     // Verifica se já precisa de assistência
     if (machines[triggered_machine].needs_assistance) return 3; 
 
+    // Atualiza os estados globais
     last_time = now;
     waiting_queue++;
     counter += 1;
     interrupt_flag = false; // Reset da flag após processamento
     machines[triggered_machine].needs_assistance = true;
-
+    // Toca o alarme para indicar o chamado
+    play_alarm(220, 300);
+    
     char buffer[BUFFER_SIZE];
     
-    // Publica mensagem sobre a máquina chamada
-    play_alarm(220, 300);
-        
+    // Publica uma mensagem sobre a máquina chamada   
     snprintf(buffer, BUFFER_SIZE, "A máquina '%s' foi chamada para o atendimento.", 
                 machines[triggered_machine].name);
     mqtt_publish(state->mqtt_client, "pico_w/test", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
@@ -185,8 +186,6 @@ err_t mqtt_test_publish(MQTT_CLIENT_T *state) {
     // Publica o status da máquina
     snprintf(buffer, BUFFER_SIZE, "{\"machine\": \"%s\", \"needs_assistance\": true, \"queue\": %u}",
             machines[triggered_machine].name, waiting_queue);
-    mqtt_publish(state->mqtt_client, "pico_w/machine/json", buffer, 
-                strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
     return mqtt_publish(state->mqtt_client, "pico_w/test", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
 }
 
@@ -221,11 +220,19 @@ void mqtt_run_test(MQTT_CLIENT_T *state) {
     }
 }
 
-
-
-
-
-
+void connection_status_alert(bool success) {
+    if (success) {
+        gpio_put(LED_PIN_G, 1);  
+        gpio_put(LED_PIN_R, 0); 
+        sleep_ms(3000);
+        gpio_put(LED_PIN_G, 0);  
+    } else {
+        gpio_put(LED_PIN_R, 1); 
+        gpio_put(LED_PIN_G, 0);
+        sleep_ms(3000);
+        gpio_put(LED_PIN_R, 0);  
+    }
+}
 
 
 
