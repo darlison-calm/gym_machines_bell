@@ -1,9 +1,15 @@
 #include "main.h"
 uint32_t waiting_queue = 0;
-uint32_t last_debounce_timer[MAX_MACHINES]; 
-MACHINE machines[MAX_MACHINES];
+uint32_t last_debounce_timer[MAX_MACHINES] = {0};
+
+MACHINE machines[MAX_MACHINES] = {
+    {"Mesa Flexora", false, 5, 1},
+    {"Agachamento no Hack", false, 6, 2},
+    {"Leg Press", false, 22, 3}
+};
 
 err_t mqtt_test_connect(MQTT_CLIENT_T *state);
+MACHINE* find_machine(int received_id);
 
 static uint triggered_machine = 0;
 static volatile bool interrupt_flag = false;
@@ -17,21 +23,6 @@ void init_leds() {
     gpio_set_dir(LED_PIN_G, GPIO_OUT);
     gpio_init(LED_PIN_R);
     gpio_set_dir(LED_PIN_R, GPIO_OUT); 
-}
-
-// Função para inicializar as máquinas
-void initialize_machines() {
-  
-    // Nomes das máquinas e os pinos GPIO correspondentes
-    const char *names[] = {"Mesa Flexora", "Agachamento no Hack", "Leg Press"};
-    int gpio_pins[] = {5, 6, 22};
-    // Inicializa as máquinas
-    for (int i = 0; i < MAX_MACHINES; i++) {
-        strcpy(machines[i].name, names[i]);      // Atribui o nome da máquina
-        machines[i].gpio_pin = gpio_pins[i];     // Atribui o pino GPIO
-        machines[i].needs_assistance = false; 
-        last_debounce_timer[i] = 0;
-    }
 }
 
 void play_alarm(uint32_t frequency, uint32_t duration_ms) {
@@ -119,22 +110,42 @@ static void mqtt_pub_start_cb(void *arg, const char *topic, u32_t tot_len) {
     DEBUG_printf("Incoming message on topic: %s\n", topic);
 }
 
-// * MEXER DEPOIS *
-// static void mqtt_pub_data_cb(void *arg, const u8_t *data, u16_t len, u8_t flags) {
-//     char buffer[BUFFER_SIZE];
-//     if (len < BUFFER_SIZE) {
-//         memcpy(buffer, data, len);
-//         buffer[len] = '\0';
-//         DEBUG_printf("Message received: %s\n", buffer);
-//         if (strcmp(buffer, "acender") == 0) {
-//             pwm_led(LED_PIN_B, 2000);
-//         } else if (strcmp(buffer, "apagar") == 0) {
-//             pwm_led(LED_PIN_B, 0);
-//         }
-//     } else {
-//         DEBUG_printf("Message too large, discarding.\n");
-//     }
-// }
+static void mqtt_pub_data_cb(void *arg, const u8_t *data, u16_t len, u8_t flags) {
+    char buffer[BUFFER_SIZE];
+    if (len > BUFFER_SIZE) {
+        DEBUG_printf("Mensagem é muito grande.\n");
+        return;
+    }
+
+    // Copia os dados recebidos para o buffer e adiciona o terminador nulo
+    memcpy(buffer, data, len);
+    buffer[len] = '\0';
+
+    // Converte o ID recebido para inteiro
+    int received_id = atoi(buffer);
+    DEBUG_printf("Mensagem recebida: %s\n", buffer);
+
+    // Encontra a máquina correspondente ao ID recebido
+    MACHINE *machine = find_machine(received_id);
+
+    // Verifica se a máquina foi encontrada
+    if (machine == NULL) {
+        DEBUG_printf("Falha ao encontrar a máquina com ID %d\n", received_id);
+        return;
+    }
+
+    // Verifica se a máquina precisa de assistência
+    if (!(machine->needs_assistance)) {
+        DEBUG_printf("Máquina %d não precisa de assistência.\n", machine->id);
+        return;
+    }
+
+    // Atualiza o estado da máquina
+    machine->needs_assistance = false;
+    waiting_queue--;
+    DEBUG_printf("Máquina %d atualizada. Fila de espera: %d\n", machine->id, waiting_queue);
+}
+
 
 static void mqtt_connection_cb(mqtt_client_t *client, void *arg, mqtt_connection_status_t status) {
     if (status == MQTT_CONNECT_ACCEPTED) {
@@ -178,15 +189,17 @@ err_t mqtt_test_publish(MQTT_CLIENT_T *state) {
     
     char buffer[BUFFER_SIZE];
     
-    // Publica uma mensagem sobre a máquina chamada   
-    snprintf(buffer, BUFFER_SIZE, "A máquina '%s' foi chamada para o atendimento.", 
-                machines[triggered_machine].name);
-    mqtt_publish(state->mqtt_client, "pico_w/test", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
+    snprintf(buffer, BUFFER_SIZE, 
+         "A máquina '%s' (ID: %d) foi chamada para o atendimento. Fila de espera: %d.", 
+         machines[triggered_machine].name, 
+         machines[triggered_machine].id, 
+         waiting_queue);
 
-    // Publica o status da máquina
-    snprintf(buffer, BUFFER_SIZE, "{\"machine\": \"%s\", \"needs_assistance\": true, \"queue\": %u}",
-            machines[triggered_machine].name, waiting_queue);
-    return mqtt_publish(state->mqtt_client, "pico_w/test", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
+    return mqtt_publish(state->mqtt_client, "pico_w/machine_requests", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
+
+    // // Publica o status da máquina
+    // snprintf(buffer, BUFFER_SIZE, "{\"machine\": \"%s\", \"needs_assistance\": true, \"queue\": %u}",
+    //         machines[triggered_machine].name, waiting_queue);
 }
 
 
@@ -204,8 +217,8 @@ void mqtt_run_test(MQTT_CLIENT_T *state) {
     }
 
     if (mqtt_test_connect(state) == ERR_OK) {
-         // mqtt_set_inpub_callback(state->mqtt_client, mqtt_pub_start_cb, mqtt_pub_data_cb, NULL);
-        // mqtt_sub_unsub(state->mqtt_client, "pico_w/recv", 0, mqtt_sub_request_cb, NULL, 1);
+        mqtt_set_inpub_callback(state->mqtt_client, mqtt_pub_start_cb, mqtt_pub_data_cb, NULL);
+        mqtt_sub_unsub(state->mqtt_client, "pico_w/machine_assistance", 0, mqtt_sub_request_cb, NULL, 1);
 
         while (1) {
             cyw43_arch_poll();
@@ -233,6 +246,48 @@ void connection_status_alert(bool success) {
         gpio_put(LED_PIN_R, 0);  
     }
 }
+
+int initialize_wifi(const char* ssid, const char* password) {
+     // Tenta inicializar o hardware WiFi
+    if (cyw43_arch_init()) {
+        DEBUG_printf("Failed to initialize WiFi\n");
+        return 1;
+    }
+    // Configura modo Station (cliente)
+    cyw43_arch_enable_sta_mode();
+    
+    // Tenta conectar ao WiFi (retorna 0 em caso de sucesso)
+    int result = cyw43_arch_wifi_connect_timeout_ms(ssid, 
+                                                  password, 
+                                                  CYW43_AUTH_WPA2_AES_PSK, 
+                                                  20000);
+    if (result == 0) {  // Conexão bem sucedida
+        DEBUG_printf("WiFi connected successfully!\n");
+        connection_status_alert(true);
+        return 0;
+    } else {  // Falha na conexão
+        DEBUG_printf("Failed to connect to WiFi (error: %s)\n", result);
+        connection_status_alert(false);
+        return 2;
+    }
+}
+
+// Função para encontrar uma máquina pelo ID e retornar a máquina ou NULL se não encontrada
+MACHINE* find_machine(int received_id) {
+    for (int i = 0; i < MAX_MACHINES; i++) {
+        if (machines[i].id == received_id) {
+            // Retorna um ponteiro para a máquina encontrada
+            return &machines[i];
+        }
+    }
+
+    // Se a máquina não for encontrada
+    DEBUG_printf("ID de máquina inválido: %d\n", received_id);
+    return NULL; // Retorna NULL se não encontrar a máquina
+}
+
+
+
 
 
 

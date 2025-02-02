@@ -16,8 +16,8 @@
 #include "hardware/structs/rosc.h"
 
 #define MAX_MACHINES 3
-#define WIFI_SSID "teste"
-#define WIFI_PASSWORD "12345678"
+#define WIFI_SSID "ALHN-35F0"
+#define WIFI_PASSWORD "db2207b01"
 
 /* MACROS PI PICO */
 #define LED_PIN_G 11
@@ -31,29 +31,17 @@
 #define FADE_STEP_DELAY (100) 
 
 #define BUZZER_PIN 10 // Pino GPIO conectado ao buzzer
-#define ALARM_DURATION_MS 1000 // Duração total do alarme em milissegundos
-#define FREQ1 1000 // Frequência 1 do alarme (1 kHz)
-#define FREQ2 2000 // Frequência 2 do alarme (2 kHz)
-#define ALARM_CYCLE_MS 200 // Tempo de alternância entre as frequênci
 /* END */
 
 /* MACROS MQTT */
 #define DEBUG_printf printf
-#define MQTT_SERVER_HOST "0.tcp.sa.ngrok.io"
-#define MQTT_SERVER_PORT 12527
+#define MQTT_SERVER_HOST "localhost"
+#define MQTT_SERVER_PORT 1883
 #define MQTT_TLS 0
 #define BUFFER_SIZE 256
 /* END*/
 
 /*VARIAVEIS*/
-
-
-
-extern bool alarme;
-extern bool posicao_js;
-extern bool ledverdestatus;
-extern uint adc_x_raw;
-extern uint adc_y_raw;
 typedef struct MQTT_CLIENT_T_ {
     ip_addr_t remote_addr;
     mqtt_client_t *mqtt_client;
@@ -66,25 +54,24 @@ typedef struct MACHINE {
     char name[30];
     bool needs_assistance;
     int gpio_pin;
+    int id;
 } MACHINE;
 
 /* END */
 
 /* FUNÇOES */
 void setup_gpio_interrupts();
-void initialize_machines();
+// void initialize_machines();
 void play_alarm(uint32_t frequency, uint32_t duration_ms);
 void handle_machine_interrupt(uint gpio, uint32_t events);
 void process_machine_request();
 void init_leds();
 void connection_status_alert(bool success);
-
+int initialize_wifi(const char* ssid, const char* password);
 
 static MQTT_CLIENT_T* mqtt_client_init(void);
 void run_dns_lookup(MQTT_CLIENT_T *state);
 void mqtt_run_test(MQTT_CLIENT_T *state);
-
-
 
 
 /* END */

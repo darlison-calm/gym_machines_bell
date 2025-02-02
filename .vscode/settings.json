@@ -45,6 +45,8 @@
         "string.h": "c",
         "tcp.h": "c",
         "mqtt_priv.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "mqtt.h": "c",
+        "altcp_tls.h": "c"
     }
 }
