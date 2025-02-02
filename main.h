@@ -35,7 +35,7 @@
 
 /* MACROS MQTT */
 #define DEBUG_printf printf
-#define MQTT_SERVER_HOST "localhost"
+#define MQTT_SERVER_HOST "192.168.1.11"
 #define MQTT_SERVER_PORT 1883
 #define MQTT_TLS 0
 #define BUFFER_SIZE 256

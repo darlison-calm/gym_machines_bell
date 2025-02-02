@@ -3149,9 +3149,9 @@ Discarded input sections
  .comment       0x00000000       0x46 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_adc/adc.c.obj
  .ARM.attributes
                 0x00000000       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_adc/adc.c.obj
- .text          0x00000000        0x0 /tmp/ccYzzDDS.o
- .data          0x00000000        0x0 /tmp/ccYzzDDS.o
- .bss           0x00000000        0x0 /tmp/ccYzzDDS.o
+ .text          0x00000000        0x0 /tmp/ccUey39r.o
+ .data          0x00000000        0x0 /tmp/ccUey39r.o
+ .bss           0x00000000        0x0 /tmp/ccUey39r.o
  .data          0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
@@ -3448,7 +3448,7 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/ccYzzDDS.o
+ .boot2         0x10000000      0x100 /tmp/ccUey39r.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -6376,35 +6376,35 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .rodata         0x10032a28    0x3c79c
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.mqtt_pub_request_cb.str1.4
-                0x10032a28     0x32e1 CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10032a28     0x32e5 CMakeFiles/wifimqtt.dir/embarca.c.obj
                                  0x1c (size before relaxing)
  .rodata.mqtt_sub_request_cb.str1.4
-                0x10035d09       0x21 CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0x21 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.mqtt_pub_start_cb.str1.4
-                0x10035d09       0x1f CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0x1f CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.mqtt_pub_data_cb.str1.4
-                0x10035d09       0xd8 CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0xd8 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.dns_found.str1.4
-                0x10035d09       0x2b CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0x2b CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.mqtt_connection_cb.str1.4
-                0x10035d09       0x2c CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0x2c CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.run_dns_lookup.str1.4
-                0x10035d09       0x2a CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0x2e CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.mqtt_test_publish.str1.4
-                0x10035d09       0x68 CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0x68 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.mqtt_test_connect.str1.4
-                0x10035d09        0x6 CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d        0x6 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.mqtt_run_test.str1.4
-                0x10035d09       0x4c CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0x4c CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.initialize_wifi.str1.4
-                0x10035d09       0x63 CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10035d0d       0x63 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.main.str1.4
-                0x10035d09       0x31 CMakeFiles/wifimqtt.dir/main.c.obj
+                0x10035d0d       0x31 CMakeFiles/wifimqtt.dir/main.c.obj
  .rodata.spin_lock_claim_unused.str1.4
-                0x10035d09       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x10035d0d       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
  .rodata.user_irq_claim_unused.str1.4
-                0x10035d09       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10035d09        0x7 
+                0x10035d0d       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10035d0d        0x3 
  .rodata.at_the_end_of_time
                 0x10035d10        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
                 0x10035d10                at_the_end_of_time
@@ -7996,7 +7996,7 @@ LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/libra
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_tls13_keys.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_adc/adc.c.obj
-LOAD /tmp/ccYzzDDS.o
+LOAD /tmp/ccUey39r.o
 LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -8266,7 +8266,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x000014e8       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .ARM.attributes
-                0x00001514       0x22 /tmp/ccYzzDDS.o
+                0x00001514       0x22 /tmp/ccUey39r.o
  .ARM.attributes
                 0x00001536       0x1e /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
