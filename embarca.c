@@ -158,7 +158,7 @@ void connection_status_alert(bool success, const char* connection_type) {
         }
 
         // Padrão de pulso para conexão bem-sucedida
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             gpio_put(led_pin, 1);
             sleep_ms(500);
             gpio_put(led_pin, 0);
