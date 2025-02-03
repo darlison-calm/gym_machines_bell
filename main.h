@@ -56,16 +56,22 @@ typedef struct MACHINE {
     int id;
 } MACHINE;
 
+extern MACHINE machines[MAX_MACHINES];
+extern uint32_t waiting_queue;
+extern uint32_t triggered_machine;
+
+
 /* END */
 
 /* FUNÇOES */
 void setup_gpio_interrupts();
 void play_alarm(uint32_t frequency, uint32_t duration_ms);
 void handle_machine_interrupt(uint gpio, uint32_t events);
-void process_machine_request();
+void process_machine_assistance(uint32_t received_id);
 void init_leds();
 void connection_status_alert(bool success, const char* connection_type);
 int initialize_wifi(const char* ssid, const char* password);
+bool process_machine_request();
 
 static MQTT_CLIENT_T* mqtt_client_init(void);
 void run_dns_lookup(MQTT_CLIENT_T *state);
