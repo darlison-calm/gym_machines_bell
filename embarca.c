@@ -1,34 +1,32 @@
 #include "main.h"
-uint32_t waiting_queue = 0;
-uint32_t last_debounce_timer[MAX_MACHINES] = {0};
-
-MACHINE machines[MAX_MACHINES] = {
-    {"Mesa Flexora", false, 5, 1},
-    {"Agachamento no Hack", false, 6, 2},
-    {"Leg Press", false, 22, 3}
-};
-
-err_t mqtt_test_connect(MQTT_CLIENT_T *state);
-MACHINE* find_machine(int received_id);
-
-static uint triggered_machine = 0;
-static volatile bool interrupt_flag = false;
 
 #define PUB_DELAY_MS 1000
-static uint32_t counter = 0;
+
+static uint32_t waiting_queue = 0;
+static uint32_t triggered_machine = 0;
+static bool interrupt_flag = false;
 static uint32_t last_time = 0;
+
+uint32_t last_debounce_timer[MAX_MACHINES] = {0};
+MACHINE machines[MAX_MACHINES] = {
+    {"Mesa Flexora", false, BUTTON_PIN_A, 1},
+    {"Agachamento no Hack", false, BUTTON_PIN_B, 2},
+    {"Leg Press", false, BUTTON_PIN_JS, 3}
+};
 
 void init_leds() {
     gpio_init(LED_PIN_G);
     gpio_set_dir(LED_PIN_G, GPIO_OUT);
     gpio_init(LED_PIN_R);
     gpio_set_dir(LED_PIN_R, GPIO_OUT); 
+    gpio_init(LED_PIN_B);
+    gpio_set_dir(LED_PIN_B, GPIO_OUT); 
 }
 
 void play_alarm(uint32_t frequency, uint32_t duration_ms) {
-    gpio_set_function(10, GPIO_FUNC_PWM);  // Configura o pino do buzzer para PWM
-    uint slice_num = pwm_gpio_to_slice_num(10);  // Obtém o slice do PWM
-    uint channel = pwm_gpio_to_channel(10);  // Obtém o canal do PWM
+    gpio_set_function(BUZZER_PIN, GPIO_FUNC_PWM);  // Configura o pino do buzzer para PWM
+    uint slice_num = pwm_gpio_to_slice_num(BUZZER_PIN);  // Obtém o slice do PWM
+    uint channel = pwm_gpio_to_channel(BUZZER_PIN);  // Obtém o canal do PWM
 
     // Configura o PWM para a frequência desejada
     uint32_t wrap_value = 125000000 / frequency;  // Calcula o valor de wrap
@@ -41,7 +39,7 @@ void play_alarm(uint32_t frequency, uint32_t duration_ms) {
     pwm_set_enabled(slice_num, false);  // Desliga o PWM
 
     // Configura o pino como saída e define o nível como 0 (baixo)
-    gpio_set_function(10, GPIO_IN);  // Altera a função do pino para entrada, desabilitando o PWM, removendo o chiado depois do som
+    gpio_set_function(BUZZER_PIN, GPIO_IN);  // Altera a função do pino para entrada, desabilitando o PWM, removendo o chiado depois do som
 }
 
 
@@ -126,7 +124,13 @@ static void mqtt_pub_data_cb(void *arg, const u8_t *data, u16_t len, u8_t flags)
     DEBUG_printf("Mensagem recebida: %s\n", buffer);
 
     // Encontra a máquina correspondente ao ID recebido
-    MACHINE *machine = find_machine(received_id);
+    MACHINE *machine = NULL;
+    for (int i = 0; i < MAX_MACHINES; i++) {
+        if (machines[i].id == received_id) {
+            machine = &machines[i];  
+            break;
+        }
+    }
 
     // Verifica se a máquina foi encontrada
     if (machine == NULL) {
@@ -149,10 +153,10 @@ static void mqtt_pub_data_cb(void *arg, const u8_t *data, u16_t len, u8_t flags)
 
 static void mqtt_connection_cb(mqtt_client_t *client, void *arg, mqtt_connection_status_t status) {
     if (status == MQTT_CONNECT_ACCEPTED) {
-        connection_status_alert(true);
+        connection_status_alert(true, "mqtt");
         DEBUG_printf("MQTT connected.\n");
     } else {
-         connection_status_alert(false);
+        connection_status_alert(false, "mqtt");
         DEBUG_printf("MQTT connection failed: %d\n", status);
     }
 }
@@ -181,7 +185,6 @@ err_t mqtt_test_publish(MQTT_CLIENT_T *state) {
     // Atualiza os estados globais
     last_time = now;
     waiting_queue++;
-    counter += 1;
     interrupt_flag = false; // Reset da flag após processamento
     machines[triggered_machine].needs_assistance = true;
     // Toca o alarme para indicar o chamado
@@ -196,10 +199,6 @@ err_t mqtt_test_publish(MQTT_CLIENT_T *state) {
          waiting_queue);
 
     return mqtt_publish(state->mqtt_client, "pico_w/machine_requests", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
-
-    // // Publica o status da máquina
-    // snprintf(buffer, BUFFER_SIZE, "{\"machine\": \"%s\", \"needs_assistance\": true, \"queue\": %u}",
-    //         machines[triggered_machine].name, waiting_queue);
 }
 
 
@@ -233,20 +232,6 @@ void mqtt_run_test(MQTT_CLIENT_T *state) {
     }
 }
 
-void connection_status_alert(bool success) {
-    if (success) {
-        gpio_put(LED_PIN_G, 1);  
-        gpio_put(LED_PIN_R, 0); 
-        sleep_ms(3000);
-        gpio_put(LED_PIN_G, 0);  
-    } else {
-        gpio_put(LED_PIN_R, 1); 
-        gpio_put(LED_PIN_G, 0);
-        sleep_ms(3000);
-        gpio_put(LED_PIN_R, 0);  
-    }
-}
-
 int initialize_wifi(const char* ssid, const char* password) {
      // Tenta inicializar o hardware WiFi
     if (cyw43_arch_init()) {
@@ -263,30 +248,51 @@ int initialize_wifi(const char* ssid, const char* password) {
                                                   20000);
     if (result == 0) {  // Conexão bem sucedida
         DEBUG_printf("WiFi connected successfully!\n");
-        connection_status_alert(true);
+        connection_status_alert(true, "wifi");
         return 0;
     } else {  // Falha na conexão
         DEBUG_printf("Failed to connect to WiFi (error: %s)\n", result);
-        connection_status_alert(false);
+        connection_status_alert(false, "wifi");
         return 2;
     }
 }
 
-// Função para encontrar uma máquina pelo ID e retornar a máquina ou NULL se não encontrada
-MACHINE* find_machine(int received_id) {
-    for (int i = 0; i < MAX_MACHINES; i++) {
-        if (machines[i].id == received_id) {
-            // Retorna um ponteiro para a máquina encontrada
-            return &machines[i];
+// Alerta status de conexão WIFI/MQTT pelo LED
+void connection_status_alert(bool success, const char* connection_type) {
+    // Reseta todos os LEDs inicialmente
+    gpio_put(LED_PIN_G, 0);
+    gpio_put(LED_PIN_B, 0);
+    gpio_put(LED_PIN_R, 0);
+
+    // Tratamento de conexão com sucesso
+    if (success) {
+        // Define o LED de acordo com o tipo de conexão
+        int led_pin = LED_PIN_G; // Padrão para conexão desconhecida
+        
+        if (strcmp(connection_type, "wifi") == 0) {
+            led_pin = LED_PIN_B;
+        } else if (strcmp(connection_type, "mqtt") == 0) {
+            led_pin = LED_PIN_G;
         }
+
+        // Padrão de pulso para conexão bem-sucedida
+        for (int i = 0; i < 3; i++) {
+            gpio_put(led_pin, 1);
+            sleep_ms(500);
+            gpio_put(led_pin, 0);
+            sleep_ms(500);
+        }
+        return;
     }
 
-    // Se a máquina não for encontrada
-    DEBUG_printf("ID de máquina inválido: %d\n", received_id);
-    return NULL; // Retorna NULL se não encontrar a máquina
+    // Tratamento de falha de conexão - padrão de alerta com LED vermelho
+    for (int i = 0; i < 5; i++) {
+        gpio_put(LED_PIN_R, 1);
+        sleep_ms(200);
+        gpio_put(LED_PIN_R, 0);
+        sleep_ms(200);
+    }
 }
-
-
 
 
 

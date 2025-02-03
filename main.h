@@ -23,14 +23,13 @@
 #define LED_PIN_G 11
 #define LED_PIN_B 12
 #define LED_PIN_R 13
-#define BUTTON5_PIN 5
-#define BUTTON6_PIN 6
+#define BUTTON_PIN_A 5
+#define BUTTON_PIN_B 6
 #define PWM_STEPS 2000
-#define BUTTONJS_PIN 22
+#define BUTTON_PIN_JS 22
 #define DEBOUNCE_DELAY_MS 700
 #define FADE_STEP_DELAY (100) 
-
-#define BUZZER_PIN 10 // Pino GPIO conectado ao buzzer
+#define BUZZER_PIN 10 
 /* END */
 
 /* MACROS MQTT */
@@ -61,12 +60,11 @@ typedef struct MACHINE {
 
 /* FUNÇOES */
 void setup_gpio_interrupts();
-// void initialize_machines();
 void play_alarm(uint32_t frequency, uint32_t duration_ms);
 void handle_machine_interrupt(uint gpio, uint32_t events);
 void process_machine_request();
 void init_leds();
-void connection_status_alert(bool success);
+void connection_status_alert(bool success, const char* connection_type);
 int initialize_wifi(const char* ssid, const char* password);
 
 static MQTT_CLIENT_T* mqtt_client_init(void);
