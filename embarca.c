@@ -1,9 +1,9 @@
 #include "main.h"
 
-uint32_t waiting_queue = 0;
-uint32_t triggered_machine = 0;
 static bool interrupt_flag = false;
 
+uint32_t waiting_queue = 0;
+uint32_t triggered_machine = 0;
 
 uint32_t last_debounce_timer[MAX_MACHINES] = {0};
 MACHINE machines[MAX_MACHINES] = {
@@ -32,15 +32,12 @@ void play_alarm(uint32_t frequency, uint32_t duration_ms) {
     pwm_set_chan_level(slice_num, channel, wrap_value / 2);  // Ciclo de trabalho de 50%
     pwm_set_enabled(slice_num, true);  // Habilita o PWM
 
-    sleep_ms(duration_ms);  // Mantém o tom por um determinado tempo
+    sleep_ms(duration_ms);  
 
     pwm_set_enabled(slice_num, false);  // Desliga o PWM
 
-    // Configura o pino como saída e define o nível como 0 (baixo)
-    gpio_set_function(BUZZER_PIN, GPIO_IN);  // Altera a função do pino para entrada, desabilitando o PWM, removendo o chiado depois do som
+    // gpio_set_function(BUZZER_PIN, GPIO_FUNC_SIO);  // Altera a função do pino para entrada, desabilitando o PWM, removendo o chiado depois do som
 }
-
-
 
 void handle_machine_interrupt(uint gpio, uint32_t events) {
     uint32_t now = to_ms_since_boot(get_absolute_time());
@@ -94,7 +91,9 @@ void process_machine_assistance(uint32_t received_id) {
     machine->needs_assistance = false;
     waiting_queue--;
     interrupt_flag = false;
-    
+    play_alarm(220, 300);
+    sleep_ms(50);
+    play_alarm(240, 500);
     DEBUG_printf("Máquina %d atualizada. Fila de espera: %d\n", machine->id, waiting_queue);
     return;
 }
@@ -112,10 +111,8 @@ bool process_machine_request() {
 
     // Toca o alarme para indicar o chamado
     play_alarm(220, 300);
-
     return true;
 }
-
 
 int initialize_wifi(const char* ssid, const char* password) {
      // Tenta inicializar o hardware WiFi

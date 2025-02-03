@@ -59,8 +59,6 @@ typedef struct MACHINE {
 extern MACHINE machines[MAX_MACHINES];
 extern uint32_t waiting_queue;
 extern uint32_t triggered_machine;
-
-
 /* END */
 
 /* FUNÇOES */
