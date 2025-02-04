@@ -25,7 +25,6 @@
 #define LED_PIN_R 13
 #define BUTTON_PIN_A 5
 #define BUTTON_PIN_B 6
-#define PWM_STEPS 2000
 #define BUTTON_PIN_JS 22
 #define DEBOUNCE_DELAY_MS 700
 #define FADE_STEP_DELAY (100) 
@@ -54,6 +53,8 @@ typedef struct MACHINE {
     bool needs_assistance;
     int gpio_pin;
     int id;
+    uint32_t call_timer; // Momento em que a assistência foi solicitada
+    uint32_t waiting_time; // Tempo de espera armazenado
 } MACHINE;
 
 extern MACHINE machines[MAX_MACHINES];
@@ -70,6 +71,8 @@ void init_leds();
 void connection_status_alert(bool success, const char* connection_type);
 int initialize_wifi(const char* ssid, const char* password);
 bool process_machine_request();
+void update_machines_waiting_times();
+void format_waiting_time(uint32_t milliseconds, char* output);
 
 static MQTT_CLIENT_T* mqtt_client_init(void);
 void run_dns_lookup(MQTT_CLIENT_T *state);

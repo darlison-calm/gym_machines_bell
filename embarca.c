@@ -87,8 +87,11 @@ void process_machine_assistance(uint32_t received_id) {
         DEBUG_printf("Máquina %d não precisa de assistência.\n", machine->id);
         return;
     }
+
+    uint32_t now = to_ms_since_boot(get_absolute_time());
     
     machine->needs_assistance = false;
+    machine->waiting_time = 0;
     waiting_queue--;
     interrupt_flag = false;
     play_alarm(220, 300);
@@ -108,36 +111,34 @@ bool process_machine_request() {
     waiting_queue++;
     interrupt_flag = false;  // Reset da flag após processamento
     machines[triggered_machine].needs_assistance = true;
+    machines[triggered_machine].call_timer = to_ms_since_boot(get_absolute_time());
 
     // Toca o alarme para indicar o chamado
     play_alarm(220, 300);
     return true;
 }
 
-int initialize_wifi(const char* ssid, const char* password) {
-     // Tenta inicializar o hardware WiFi
-    if (cyw43_arch_init()) {
-        DEBUG_printf("Failed to initialize WiFi\n");
-        return 1;
-    }
-    // Configura modo Station (cliente)
-    cyw43_arch_enable_sta_mode();
+void update_machines_waiting_times() {
+    uint32_t now = to_ms_since_boot(get_absolute_time());
     
-    // Tenta conectar ao WiFi (retorna 0 em caso de sucesso)
-    int result = cyw43_arch_wifi_connect_timeout_ms(ssid, 
-                                                  password, 
-                                                  CYW43_AUTH_WPA2_AES_PSK, 
-                                                  20000);
-    if (result == 0) {  // Conexão bem sucedida
-        DEBUG_printf("WiFi connected successfully!\n");
-        connection_status_alert(true, "wifi");
-        return 0;
-    } else {  // Falha na conexão
-        DEBUG_printf("Failed to connect to WiFi (error: %s)\n", result);
-        connection_status_alert(false, "wifi");
-        return 2;
+    for (int i = 0; i < MAX_MACHINES; i++) {
+        if (machines[i].needs_assistance) {
+            machines[i].waiting_time = now - machines[i].call_timer;
+        }
     }
 }
+
+void format_waiting_time(uint32_t milliseconds, char* output) {
+    uint32_t total_seconds = milliseconds / 1000;
+    uint32_t hours = total_seconds / 3600;
+    uint32_t remaining = total_seconds % 3600;
+    uint32_t minutes = remaining / 60;
+    uint32_t seconds = remaining % 60;
+
+    // Format the time string without milliseconds
+    sprintf(output, "%02u:%02u:%02u", hours, minutes, seconds);
+}
+
 
 // Alerta status de conexão WIFI/MQTT pelo LED
 void connection_status_alert(bool success, const char* connection_type) {

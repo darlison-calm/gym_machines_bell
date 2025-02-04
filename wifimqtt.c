@@ -73,7 +73,7 @@ err_t mqtt_machine_request(MQTT_CLIENT_T *state) {
     char buffer[BUFFER_SIZE];
 
     snprintf(buffer, BUFFER_SIZE,
-        "A máquina '%s' - ID: %d foi chamada para o atendimento. Tamanho da fila de espera: %d.",
+        "A máquina '%s' - ID: %d foi chamada para o atendimento. \nTamanho fila de espera: %d.",
         machines[triggered_machine].name,
         machines[triggered_machine].id,
         waiting_queue);
@@ -84,14 +84,17 @@ err_t mqtt_machine_request(MQTT_CLIENT_T *state) {
 // Função para publicar o status de cada máquina
 err_t mqtt_publish_machine_status(MQTT_CLIENT_T *state) {
     char buffer[BUFFER_SIZE];
+    char formatted_machine_time[9];
     // Percorre todas as máquinas e publica o status de cada uma
     for (int i = 0; i < 3; i++) {
+        format_waiting_time(machines[i].waiting_time, formatted_machine_time);
         // Formata o status da máquina com os campos disponíveis
         snprintf(buffer, BUFFER_SIZE, 
-            "Máquina %s - ID: %d\nStatus: %s", 
+            "Máquina %s - ID: %d\nStatus: %s\nTempo de espera: %s", 
             machines[i].name, 
             machines[i].id, 
-            machines[i].needs_assistance ? "Aluno precisa de ajuda" : "Aluno não precisa de ajuda"
+            machines[i].needs_assistance ? "Aluno precisa de ajuda" : "Aluno não precisa de ajuda",
+            formatted_machine_time
         );
 
         // Publica o status para cada máquina
@@ -143,7 +146,9 @@ void mqtt_run_test(MQTT_CLIENT_T *state) {
         while (1) {
             cyw43_arch_poll();
             uint32_t now = to_ms_since_boot(get_absolute_time());
-            
+            update_machines_waiting_times();
+
+
             if (mqtt_client_is_connected(state->mqtt_client)) {
                 mqtt_publish_machine_assistance(state);
 
@@ -159,6 +164,31 @@ void mqtt_run_test(MQTT_CLIENT_T *state) {
                 mqtt_test_connect(state);
             }
         }
+    }
+}
+
+int initialize_wifi(const char* ssid, const char* password) {
+     // Tenta inicializar o hardware WiFi
+    if (cyw43_arch_init()) {
+        DEBUG_printf("Failed to initialize WiFi\n");
+        return 1;
+    }
+    // Configura modo Station (cliente)
+    cyw43_arch_enable_sta_mode();
+    
+    // Tenta conectar ao WiFi (retorna 0 em caso de sucesso)
+    int result = cyw43_arch_wifi_connect_timeout_ms(ssid, 
+                                                  password, 
+                                                  CYW43_AUTH_WPA2_AES_PSK, 
+                                                  20000);
+    if (result == 0) {  // Conexão bem sucedida
+        DEBUG_printf("WiFi connected successfully!\n");
+        connection_status_alert(true, "wifi");
+        return 0;
+    } else {  // Falha na conexão
+        DEBUG_printf("Failed to connect to WiFi (error: %s)\n", result);
+        connection_status_alert(false, "wifi");
+        return 2;
     }
 }
 
