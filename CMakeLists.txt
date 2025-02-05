@@ -53,7 +53,7 @@ if (PICO_CYW43_SUPPORTED) # set by BOARD=pico-w
         else()
             add_executable(wifimqtt
             wifimqtt.c
-            bell_sound_helpers.c
+            bell_sound.c
             embarca.c
             main.c
             )

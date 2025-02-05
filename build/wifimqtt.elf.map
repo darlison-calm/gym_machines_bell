@@ -114,9 +114,9 @@ Discarded input sections
                 0x00000000       0xb8 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .text.mqtt_test_connect
                 0x00000000       0x38 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
- .text          0x00000000        0x0 CMakeFiles/wifimqtt.dir/bell_sound_helpers.c.obj
- .data          0x00000000        0x0 CMakeFiles/wifimqtt.dir/bell_sound_helpers.c.obj
- .bss           0x00000000        0x0 CMakeFiles/wifimqtt.dir/bell_sound_helpers.c.obj
+ .text          0x00000000        0x0 CMakeFiles/wifimqtt.dir/bell_sound.c.obj
+ .data          0x00000000        0x0 CMakeFiles/wifimqtt.dir/bell_sound.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/wifimqtt.dir/bell_sound.c.obj
  .text          0x00000000        0x0 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .data          0x00000000        0x0 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .bss           0x00000000        0x0 CMakeFiles/wifimqtt.dir/embarca.c.obj
@@ -3141,9 +3141,9 @@ Discarded input sections
  .comment       0x00000000       0x46 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_adc/adc.c.obj
  .ARM.attributes
                 0x00000000       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_adc/adc.c.obj
- .text          0x00000000        0x0 /tmp/ccHdV98h.o
- .data          0x00000000        0x0 /tmp/ccHdV98h.o
- .bss           0x00000000        0x0 /tmp/ccHdV98h.o
+ .text          0x00000000        0x0 /tmp/ccwPXFnP.o
+ .data          0x00000000        0x0 /tmp/ccwPXFnP.o
+ .bss           0x00000000        0x0 /tmp/ccwPXFnP.o
  .data          0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
@@ -3434,7 +3434,7 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/ccHdV98h.o
+ .boot2         0x10000000      0x100 /tmp/ccwPXFnP.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -3530,10 +3530,10 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
                 0x100006cc       0x6c CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
                 0x100006cc                initialize_wifi
  .text.pwm_init_buzzer
-                0x10000738       0x6c CMakeFiles/wifimqtt.dir/bell_sound_helpers.c.obj
+                0x10000738       0x6c CMakeFiles/wifimqtt.dir/bell_sound.c.obj
                 0x10000738                pwm_init_buzzer
  .text.play_bell
-                0x100007a4       0x5c CMakeFiles/wifimqtt.dir/bell_sound_helpers.c.obj
+                0x100007a4       0x5c CMakeFiles/wifimqtt.dir/bell_sound.c.obj
                 0x100007a4                play_bell
  .text.handle_machine_interrupt
                 0x10000800       0x88 CMakeFiles/wifimqtt.dir/embarca.c.obj
@@ -7739,7 +7739,7 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
                 0x00000001                        ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed)
                 0x00000001                        ASSERT (((__binary_info_header_end - __logical_binary_start) <= 0x100), Binary info must be in first 256 bytes of the binary)
 LOAD CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
-LOAD CMakeFiles/wifimqtt.dir/bell_sound_helpers.c.obj
+LOAD CMakeFiles/wifimqtt.dir/bell_sound.c.obj
 LOAD CMakeFiles/wifimqtt.dir/embarca.c.obj
 LOAD CMakeFiles/wifimqtt.dir/main.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_lwip/lwip_nosys.c.obj
@@ -8017,7 +8017,7 @@ LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/libra
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_tls13_keys.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_adc/adc.c.obj
-LOAD /tmp/ccHdV98h.o
+LOAD /tmp/ccwPXFnP.o
 LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -8043,7 +8043,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000004a       0x2c CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .ARM.attributes
-                0x00000076       0x2c CMakeFiles/wifimqtt.dir/bell_sound_helpers.c.obj
+                0x00000076       0x2c CMakeFiles/wifimqtt.dir/bell_sound.c.obj
  .ARM.attributes
                 0x000000a2       0x2c CMakeFiles/wifimqtt.dir/embarca.c.obj
  .ARM.attributes
@@ -8291,7 +8291,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00001540       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .ARM.attributes
-                0x0000156c       0x22 /tmp/ccHdV98h.o
+                0x0000156c       0x22 /tmp/ccwPXFnP.o
  .ARM.attributes
                 0x0000158e       0x1e /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
@@ -8346,7 +8346,7 @@ LOAD linker stubs
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
                                  0x46 (size before relaxing)
- .comment       0x00000045       0x46 CMakeFiles/wifimqtt.dir/bell_sound_helpers.c.obj
+ .comment       0x00000045       0x46 CMakeFiles/wifimqtt.dir/bell_sound.c.obj
  .comment       0x00000045       0x46 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .comment       0x00000045       0x46 CMakeFiles/wifimqtt.dir/main.c.obj
  .comment       0x00000045       0x46 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_lwip/lwip_nosys.c.obj
