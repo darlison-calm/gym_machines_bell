@@ -180,7 +180,7 @@ int initialize_wifi(const char* ssid, const char* password) {
     int result = cyw43_arch_wifi_connect_timeout_ms(ssid, 
                                                   password, 
                                                   CYW43_AUTH_WPA2_AES_PSK, 
-                                                  10000);
+                                                  20000);
     if (result == 0) {  // Conexão bem sucedida
         DEBUG_printf("WiFi connected successfully!\n");
         display_oled_message( "  CONEXAO BEM  ", "  SUCEDIDA  ");

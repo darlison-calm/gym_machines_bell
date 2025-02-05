@@ -3200,9 +3200,9 @@ Discarded input sections
                 0x00000000       0x48 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_read_timeout_per_char_us
                 0x00000000       0x48 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
- .text          0x00000000        0x0 /tmp/cct6hqv2.o
- .data          0x00000000        0x0 /tmp/cct6hqv2.o
- .bss           0x00000000        0x0 /tmp/cct6hqv2.o
+ .text          0x00000000        0x0 /tmp/ccq8B42n.o
+ .data          0x00000000        0x0 /tmp/ccq8B42n.o
+ .bss           0x00000000        0x0 /tmp/ccq8B42n.o
  .data          0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
@@ -3499,7 +3499,7 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/cct6hqv2.o
+ .boot2         0x10000000      0x100 /tmp/ccq8B42n.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -6472,758 +6472,758 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .iplt           0x100332d0        0x0
  .iplt          0x100332d0        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x100332d0    0x3c994
+.rodata         0x100332d0    0x3c97c
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.mqtt_pub_request_cb.str1.4
-                0x100332d0     0x3395 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x100332d0     0x337d CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
                                  0x1c (size before relaxing)
  .rodata.mqtt_sub_request_cb.str1.4
-                0x10036665       0x21 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x21 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_pub_start_cb.str1.4
-                0x10036665       0x1f CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x1f CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.dns_found.str1.4
-                0x10036665       0x2b CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x2b CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_pub_data_cb.str1.4
-                0x10036665       0x33 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x33 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_connection_cb.str1.4
-                0x10036665       0x2c CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x2c CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.run_dns_lookup.str1.4
-                0x10036665       0x2e CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x2e CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_machine_request.str1.4
-                0x10036665       0x70 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x70 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_publish_machine_status.str1.4
-                0x10036665       0x68 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x68 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_test_connect.str1.4
-                0x10036665        0x6 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d        0x6 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_run_test.str1.4
-                0x10036665       0x4c CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x4c CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.initialize_wifi.str1.4
-                0x10036665       0xb9 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
- *fill*         0x10036665        0x3 
- .rodata.font   0x10036668      0x128 CMakeFiles/wifimqtt.dir/inc/ssd1306_i2c.c.obj
- .rodata        0x10036790       0x1a CMakeFiles/wifimqtt.dir/inc/ssd1306_i2c.c.obj
+                0x1003664d       0xb9 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+ *fill*         0x1003664d        0x3 
+ .rodata.font   0x10036650      0x128 CMakeFiles/wifimqtt.dir/inc/ssd1306_i2c.c.obj
+ .rodata        0x10036778       0x1a CMakeFiles/wifimqtt.dir/inc/ssd1306_i2c.c.obj
  .rodata.process_machine_assistance.str1.4
-                0x100367aa       0x70 CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10036792       0x64 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.process_machine_request.str1.4
-                0x100367aa       0x12 CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10036792        0x6 CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.format_waiting_time.str1.4
-                0x100367aa        0xf CMakeFiles/wifimqtt.dir/embarca.c.obj
+                0x10036792        0xf CMakeFiles/wifimqtt.dir/embarca.c.obj
  .rodata.main.str1.4
-                0x100367aa       0x2d CMakeFiles/wifimqtt.dir/main.c.obj
+                0x10036792       0x2d CMakeFiles/wifimqtt.dir/main.c.obj
  .rodata.spin_lock_claim_unused.str1.4
-                0x100367aa       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x10036792       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_sync/sync.c.obj
  .rodata.user_irq_claim_unused.str1.4
-                0x100367aa       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x100367aa        0x6 
+                0x10036792       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10036792        0x6 
  .rodata.at_the_end_of_time
-                0x100367b0        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
-                0x100367b0                at_the_end_of_time
+                0x10036798        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/common/pico_time/time.c.obj
+                0x10036798                at_the_end_of_time
  .rodata.hardware_alarm_claim.str1.4
-                0x100367b8       0x22 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x100367a0       0x22 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_timer/timer.c.obj
  .rodata.dns_send.isra.0.str1.4
-                0x100367b8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/dns.c.obj
+                0x100367a0       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/dns.c.obj
  .rodata.dns_check_entry.str1.4
-                0x100367b8       0x3b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/dns.c.obj
+                0x100367a0       0x3b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/dns.c.obj
  .rodata.mem_malloc.str1.4
-                0x100367b8       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/mem.c.obj
+                0x100367a0       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/mem.c.obj
  .rodata.mem_free.str1.4
-                0x100367b8       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/mem.c.obj
+                0x100367a0       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/mem.c.obj
  .rodata.memp_malloc_pool.str1.4
-                0x100367b8       0x37 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x100367a0       0x37 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
  .rodata.memp_free_pool.str1.4
-                0x100367b8       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x100367a0       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
  .rodata.memp_pools
-                0x100367b8       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x100367b8                memp_pools
+                0x100367a0       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x100367a0                memp_pools
  .rodata.memp_PBUF_POOL
-                0x100367e0        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x100367e0                memp_PBUF_POOL
+                0x100367c8        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x100367c8                memp_PBUF_POOL
  .rodata.memp_PBUF
-                0x100367ec        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x100367ec                memp_PBUF
+                0x100367d4        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x100367d4                memp_PBUF
  .rodata.memp_SYS_TIMEOUT
-                0x100367f8        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x100367f8                memp_SYS_TIMEOUT
+                0x100367e0        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x100367e0                memp_SYS_TIMEOUT
  .rodata.memp_REASSDATA
-                0x10036804        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x10036804                memp_REASSDATA
+                0x100367ec        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x100367ec                memp_REASSDATA
  .rodata.memp_ALTCP_PCB
-                0x10036810        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x10036810                memp_ALTCP_PCB
+                0x100367f8        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x100367f8                memp_ALTCP_PCB
  .rodata.memp_TCP_SEG
-                0x1003681c        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x1003681c                memp_TCP_SEG
+                0x10036804        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x10036804                memp_TCP_SEG
  .rodata.memp_TCP_PCB_LISTEN
-                0x10036828        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x10036828                memp_TCP_PCB_LISTEN
+                0x10036810        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x10036810                memp_TCP_PCB_LISTEN
  .rodata.memp_TCP_PCB
-                0x10036834        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x10036834                memp_TCP_PCB
+                0x1003681c        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x1003681c                memp_TCP_PCB
  .rodata.memp_UDP_PCB
-                0x10036840        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x10036840                memp_UDP_PCB
+                0x10036828        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x10036828                memp_UDP_PCB
  .rodata.memp_RAW_PCB
-                0x1003684c        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
-                0x1003684c                memp_RAW_PCB
+                0x10036834        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/memp.c.obj
+                0x10036834                memp_RAW_PCB
  .rodata.netif_add.str1.4
-                0x10036858       0x42 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/netif.c.obj
+                0x10036840       0x42 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/netif.c.obj
  .rodata.pbuf_free.part.0.str1.4
-                0x10036858       0x2a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x2a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_alloc.str1.4
-                0x10036858       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_realloc.str1.4
-                0x10036858       0x65 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x65 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_add_header.str1.4
-                0x10036858        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_ref.str1.4
-                0x10036858       0x12 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x12 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_cat.str1.4
-                0x10036858       0x2d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x2d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_copy_partial_pbuf.str1.4
-                0x10036858       0x33 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x33 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_take.str1.4
-                0x10036858       0x2e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x2e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_take_at.str1.4
-                0x10036858       0x17 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x17 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.pbuf_coalesce.str1.4
-                0x10036858       0x11 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
+                0x10036840       0x11 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/pbuf.c.obj
  .rodata.raw_input.str1.4
-                0x10036858       0x49 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/raw.c.obj
+                0x10036840       0x49 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/raw.c.obj
  .rodata.altcp_tcp_get_port.str1.4
-                0x10036858       0x19 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/altcp_tcp.c.obj
+                0x10036840       0x19 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/altcp_tcp.c.obj
  .rodata.altcp_tcp_sent.str1.4
-                0x10036858        0xd CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/altcp_tcp.c.obj
+                0x10036840        0xd CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/altcp_tcp.c.obj
  .rodata.altcp_tcp_functions
-                0x10036858       0x5c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/altcp_tcp.c.obj
-                0x10036858                altcp_tcp_functions
+                0x10036840       0x5c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/altcp_tcp.c.obj
+                0x10036840                altcp_tcp_functions
  .rodata.tcp_close_shutdown_fin.str1.4
-                0x100368b4        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_free.str1.4
-                0x100368b4       0x11 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x11 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_update_rcv_ann_wnd.str1.4
-                0x100368b4       0x3e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x3e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_recved.str1.4
-                0x100368b4       0x26 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x26 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_slowtmr.str1.4
-                0x100368b4      0x1c6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c      0x1c6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_seg_copy.str1.4
-                0x100368b4       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_recv.str1.4
-                0x100368b4       0x27 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x27 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_sent.str1.4
-                0x100368b4       0x27 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x27 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_err.str1.4
-                0x100368b4       0x26 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x26 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_poll.str1.4
-                0x100368b4       0x1e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x1e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_pcb_remove.str1.4
-                0x100368b4       0x87 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x87 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_abandon.str1.4
-                0x100368b4       0x31 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x31 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_accept_null.str1.4
-                0x100368b4       0x1d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x1d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_close_shutdown.str1.4
-                0x100368b4       0x55 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x55 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_next_iss.str1.4
-                0x100368b4       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_eff_send_mss_netif.str1.4
-                0x100368b4       0x27 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c       0x27 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_pcb_lists
-                0x100368b4       0x10 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
-                0x100368b4                tcp_pcb_lists
+                0x1003689c       0x10 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x1003689c                tcp_pcb_lists
  .rodata.tcp_persist_backoff
-                0x100368c4        0x7 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
- *fill*         0x100368cb        0x1 
+                0x100368ac        0x7 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+ *fill*         0x100368b3        0x1 
  .rodata.tcp_backoff
-                0x100368cc        0xd CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
+                0x100368b4        0xd CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp.c.obj
  .rodata.tcp_parseopt.str1.4
-                0x100368d9       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
+                0x100368c1       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
  .rodata.tcp_oos_insert_segment.str1.4
-                0x100368d9       0x25 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
+                0x100368c1       0x25 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
  .rodata.tcp_free_acked_segments.isra.0.str1.4
-                0x100368d9       0x48 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
+                0x100368c1       0x48 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
  .rodata.tcp_receive.str1.4
-                0x100368d9      0x104 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
+                0x100368c1      0x104 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
  .rodata.tcp_input.str1.4
-                0x100368d9      0x1de CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
- *fill*         0x100368d9        0x3 
+                0x100368c1      0x1de CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
+ *fill*         0x100368c1        0x3 
  .rodata.tcp_input
-                0x100368dc       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
+                0x100368c4       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_in.c.obj
  .rodata.tcp_create_segment.str1.4
-                0x10036904       0x59 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x59 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_output_fill_options.part.0.str1.4
-                0x10036904       0x13 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x13 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_output_control_segment.str1.4
-                0x10036904       0x29 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x29 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_output_alloc_header.constprop.0.str1.4
-                0x10036904       0x56 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x56 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_write.str1.4
-                0x10036904      0x13e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec      0x13e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_split_unsent_seg.str1.4
-                0x10036904       0x55 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x55 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_send_fin.str1.4
-                0x10036904       0x88 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x88 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_enqueue_flags.str1.4
-                0x10036904       0xb1 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0xb1 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_rexmit_rto_prepare.str1.4
-                0x10036904       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_rexmit.str1.4
-                0x10036904       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_rexmit_fast.str1.4
-                0x10036904       0x1d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x1d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_rst.str1.4
-                0x10036904       0x37 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x37 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_send_empty_ack.str1.4
-                0x10036904       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_output.str1.4
-                0x10036904       0x57 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x57 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_rexmit_rto_commit.str1.4
-                0x10036904       0x23 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x23 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_rexmit_rto.str1.4
-                0x10036904       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_keepalive.str1.4
-                0x10036904       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcp_zero_window_probe.str1.4
-                0x10036904       0x23 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
+                0x100368ec       0x23 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/tcp_out.c.obj
  .rodata.tcpip_tcp_timer.str1.4
-                0x10036904       0x3d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/timeouts.c.obj
+                0x100368ec       0x3d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/timeouts.c.obj
  .rodata.sys_timeouts_init.str1.4
-                0x10036904       0x36 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/timeouts.c.obj
+                0x100368ec       0x36 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/timeouts.c.obj
  .rodata.lwip_cyclic_timers
-                0x10036904       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/timeouts.c.obj
-                0x10036904                lwip_cyclic_timers
+                0x100368ec       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/timeouts.c.obj
+                0x100368ec                lwip_cyclic_timers
  .rodata.udp_input.str1.4
-                0x10036934       0x4e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/udp.c.obj
+                0x1003691c       0x4e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/udp.c.obj
  .rodata.udp_sendto_if_src.str1.4
-                0x10036934       0x2e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/udp.c.obj
+                0x1003691c       0x2e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/udp.c.obj
  .rodata.dhcp_create_msg.str1.4
-                0x10036934       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
+                0x1003691c       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
  .rodata.dhcp_inc_pcb_refcount.str1.4
-                0x10036934       0x25 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
+                0x1003691c       0x25 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
  .rodata.dhcp_option_hostname.isra.0.str1.4
-                0x10036934       0x95 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
+                0x1003691c       0x95 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
  .rodata.dhcp_recv
-                0x10036934      0x1e0 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
+                0x1003691c      0x1e0 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
  .rodata.dhcp_set_struct.str1.4
-                0x10036b14       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
+                0x10036afc       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
  .rodata.dhcp_inform.str1.4
-                0x10036b14       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
+                0x10036afc       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
  .rodata.dhcp_network_changed_link_up.str1.4
-                0x10036b14       0x14 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
+                0x10036afc       0x14 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/dhcp.c.obj
  .rodata.etharp_find_entry.str1.4
-                0x10036b14       0x41 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
+                0x10036afc       0x41 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
  .rodata.etharp_raw.str1.4
-                0x10036b14       0x85 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
+                0x10036afc       0x85 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
  .rodata.etharp_output_to_arp_index.str1.4
-                0x10036b14       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
+                0x10036afc       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
  .rodata.etharp_get_entry.str1.4
-                0x10036b14       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
+                0x10036afc       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
  .rodata.etharp_input.str1.4
-                0x10036b14       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
+                0x10036afc       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
  .rodata.etharp_query.str1.4
-                0x10036b14       0x2a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
+                0x10036afc       0x2a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
  .rodata.etharp_output.str1.4
-                0x10036b14        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
+                0x10036afc        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/etharp.c.obj
  .rodata.icmp_input.str1.4
-                0x10036b14       0x65 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/icmp.c.obj
+                0x10036afc       0x65 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/icmp.c.obj
  .rodata.icmp_dest_unreach.str1.4
-                0x10036b14       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/icmp.c.obj
+                0x10036afc       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/icmp.c.obj
  .rodata.ip_reass_free_complete_datagram.str1.4
-                0x10036b14       0x7e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_frag.c.obj
+                0x10036afc       0x7e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_frag.c.obj
  .rodata.ip4_reass.str1.4
-                0x10036b14       0x70 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_frag.c.obj
+                0x10036afc       0x70 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_frag.c.obj
  .rodata.ip4_frag.str1.4
-                0x10036b14       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_frag.c.obj
+                0x10036afc       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_frag.c.obj
  .rodata.ip4_output_if.str1.4
-                0x10036b14       0x39 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4.c.obj
+                0x10036afc       0x39 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4.c.obj
  .rodata.ip4addr_aton.str1.4
-                0x10036b14        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_addr.c.obj
+                0x10036afc        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_addr.c.obj
  .rodata.ip4addr_aton
-                0x10036b14       0x14 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_addr.c.obj
+                0x10036afc       0x14 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_addr.c.obj
  .rodata.ip_addr_broadcast
-                0x10036b28        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_addr.c.obj
-                0x10036b28                ip_addr_broadcast
+                0x10036b10        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_addr.c.obj
+                0x10036b10                ip_addr_broadcast
  .rodata.ip_addr_any
-                0x10036b2c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_addr.c.obj
-                0x10036b2c                ip_addr_any
+                0x10036b14        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/core/ipv4/ip4_addr.c.obj
+                0x10036b14                ip_addr_any
  .rodata.ethernet_output.str1.4
-                0x10036b30       0x31 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/netif/ethernet.c.obj
+                0x10036b18       0x31 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/netif/ethernet.c.obj
  .rodata.ethzero
-                0x10036b30        0x6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/netif/ethernet.c.obj
-                0x10036b30                ethzero
- *fill*         0x10036b36        0x2 
+                0x10036b18        0x6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/netif/ethernet.c.obj
+                0x10036b18                ethzero
+ *fill*         0x10036b1e        0x2 
  .rodata.ethbroadcast
-                0x10036b38        0x6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/netif/ethernet.c.obj
-                0x10036b38                ethbroadcast
+                0x10036b20        0x6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/netif/ethernet.c.obj
+                0x10036b20                ethbroadcast
  .rodata.cyw43_read_bytes.str1.4
-                0x10036b3e       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
+                0x10036b26       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
  .rodata.cyw43_write_bytes.str1.4
-                0x10036b3e        0xd CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
- *fill*         0x10036b3e        0x2 
+                0x10036b26        0xd CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
+ *fill*         0x10036b26        0x2 
  .rodata.spi_gap01_sample0_program
-                0x10036b40        0x6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
- *fill*         0x10036b46        0x2 
+                0x10036b28        0x6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
+ *fill*         0x10036b2e        0x2 
  .rodata.spi_gap01_sample0_program_instructions
-                0x10036b48        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
+                0x10036b30        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
  .rodata.cyw43_kso_set.str1.4
-                0x10036b54       0x23 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x23 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_ll_sdpcm_poll_device.str1.4
-                0x10036b54       0x55 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x55 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_sdpcm_send_common.str1.4
-                0x10036b54       0x22 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x22 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_do_ioctl.str1.4
-                0x10036b54       0x53 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x53 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.reset_device_core.constprop.0.str1.4
-                0x10036b54       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x1a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_ll_bus_init.str1.4
-                0x10036b54       0xfe CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0xfe CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_ll_wifi_on.str1.4
-                0x10036b54       0x3e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x3e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_ll_wifi_pm.str1.4
-                0x10036b54       0x35 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x35 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_ll_wifi_join.str1.4
-                0x10036b54       0x41 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x41 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_ll_wifi_ap_init.str1.4
-                0x10036b54       0x31 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c       0x31 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_ll_wifi_ap_set_up.str1.4
-                0x10036b54        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.w43439A0_7_95_49_00_combined
-                0x10036b54    0x36fd8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x10036b3c    0x36fd8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.wifi_nvram_4343
-                0x1006db2c      0x2e7 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
- *fill*         0x1006de13        0x1 
- .rodata        0x1006de14       0x72 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+                0x1006db14      0x2e7 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
+ *fill*         0x1006ddfb        0x1 
+ .rodata        0x1006ddfc       0x72 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ll.c.obj
  .rodata.cyw43_netif_output.str1.4
-                0x1006de86       0x22 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_lwip.c.obj
+                0x1006de6e       0x22 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_lwip.c.obj
  .rodata.cyw43_cb_tcpip_init.str1.4
-                0x1006de86        0x6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_lwip.c.obj
+                0x1006de6e        0x6 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_lwip.c.obj
  .rodata.cyw43_cb_process_async_event.str1.4
-                0x1006de86       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ctrl.c.obj
- *fill*         0x1006de86        0x2 
+                0x1006de6e       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ctrl.c.obj
+ *fill*         0x1006de6e        0x2 
  .rodata.cyw43_cb_process_async_event
-                0x1006de88       0xbc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ctrl.c.obj
+                0x1006de70       0xbc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ctrl.c.obj
  .rodata.str1.4
-                0x1006df44       0x9e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ctrl.c.obj
+                0x1006df2c       0x9e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ctrl.c.obj
  .rodata.cyw43_async_event_name_table
-                0x1006df44      0x164 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ctrl.c.obj
+                0x1006df2c      0x164 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/cyw43-driver/src/cyw43_ctrl.c.obj
  .rodata.pio_claim_unused_sm.str1.4
-                0x1006e0a8       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pio/pio.c.obj
+                0x1006e090       0x24 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pio/pio.c.obj
  .rodata.pio_add_program.str1.4
-                0x1006e0a8       0x11 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pio/pio.c.obj
+                0x1006e090       0x11 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_pio/pio.c.obj
  .rodata.dma_claim_unused_channel.str1.4
-                0x1006e0a8       0x1e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_dma/dma.c.obj
+                0x1006e090       0x1e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_dma/dma.c.obj
  .rodata.async_context_poll_lock_check.str1.4
-                0x1006e0a8       0x3c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_async_context/async_context_poll.c.obj
+                0x1006e090       0x3c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_async_context/async_context_poll.c.obj
  .rodata.template
-                0x1006e0a8       0x38 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_async_context/async_context_poll.c.obj
+                0x1006e090       0x38 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_async_context/async_context_poll.c.obj
  .rodata.panic.str1.4
-                0x1006e0e0       0x12 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1006e0c8       0x12 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.hard_assertion_failure.str1.4
-                0x1006e0e0        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1006e0c8        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata._ftoa.str1.4
-                0x1006e0e0       0x15 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x1006e0c8       0x15 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .rodata._vsnprintf
-                0x1006e0e0      0x19c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x1006e27c        0x4 
+                0x1006e0c8      0x19c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x1006e264        0x4 
  .rodata.pow10.0
-                0x1006e280       0x50 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
+                0x1006e268       0x50 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_printf/printf.c.obj
  .rodata.missing_double_func_shim.str1.4
-                0x1006e2d0       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x1006e2b8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_double/double_init_rom.c.obj
  .rodata.missing_float_func_shim.str1.4
-                0x1006e2d0        0x1 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x1006e2b8        0x1 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_float/float_init_rom.c.obj
  .rodata.__wrap_malloc.str1.4
-                0x1006e2d0        0xe CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x1006e2b8        0xe CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_malloc/pico_malloc.c.obj
  .rodata.str1.4
-                0x1006e2d0       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006e2b8       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x1006e2d0        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006e2b8        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x1006e2dc        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006e2c4        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x1006e2e8        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006e2d0        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.0
-                0x1006e2f4        0x2 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1006e2dc        0x2 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio/stdio.c.obj
  .rodata.str1.4
-                0x1006e2f6       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- *fill*         0x1006e2f6        0x2 
+                0x1006e2de       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ *fill*         0x1006e2de        0x2 
  .rodata.__bi_33.4
-                0x1006e2f8        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x1006e2e0        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata.__bi_34.5
-                0x1006e304        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x1006e2ec        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata._resetd_driver
-                0x1006e30c       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x1006e2f4       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .rodata.str1.4
-                0x1006e324       0x13 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1006e30c       0x13 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .rodata.__bi_182.0
-                0x1006e324        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1006e30c        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .rodata.str1.4
-                0x1006e330       0x2a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x1006e318       0x2a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_str
-                0x1006e330       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x1006e318       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_cfg
-                0x1006e348       0x54 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x1006e330       0x54 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_device
-                0x1006e39c       0x12 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x1006e384       0x12 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.str1.4
-                0x1006e3ae       0x14 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x1006e396       0x14 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .rodata.str1.4
-                0x1006e3ae       0x53 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- *fill*         0x1006e3ae        0x2 
+                0x1006e396       0x53 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ *fill*         0x1006e396        0x2 
  .rodata.tud_task_ext
-                0x1006e3b0       0x8c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/device/usbd.c.obj
+                0x1006e398       0x8c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/device/usbd.c.obj
  .rodata._usbd_driver
-                0x1006e43c       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/device/usbd.c.obj
+                0x1006e424       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/tinyusb/src/device/usbd.c.obj
  .rodata.altcp_mbedtls_bio_recv.str1.4
-                0x1006e454       0x16 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c       0x16 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
  .rodata.altcp_mbedtls_bio_send.str1.4
-                0x1006e454       0x45 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c       0x45 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
  .rodata.altcp_mbedtls_lower_sent.str1.4
-                0x1006e454       0x15 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c       0x15 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
  .rodata.altcp_mbedtls_write.str1.4
-                0x1006e454       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
  .rodata.altcp_mbedtls_handle_rx_appldata.str1.4
-                0x1006e454       0xa3 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c       0xa3 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
  .rodata.altcp_mbedtls_lower_recv_process.str1.4
-                0x1006e454       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
  .rodata.altcp_mbedtls_lower_recv.str1.4
-                0x1006e454       0x21 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c       0x21 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
  .rodata.altcp_mbedtls_setup.str1.4
-                0x1006e454       0x13 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c       0x13 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
  .rodata.altcp_mbedtls_functions
-                0x1006e454       0x5c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
-                0x1006e454                altcp_mbedtls_functions
+                0x1006e43c       0x5c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls.c.obj
+                0x1006e43c                altcp_mbedtls_functions
  .rodata.altcp_mbedtls_free.str1.4
-                0x1006e4b0        0xe CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls_mem.c.obj
+                0x1006e498        0xe CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/altcp_tls/altcp_tls_mbedtls_mem.c.obj
  .rodata.mbedtls_cipher_definitions
-                0x1006e4b0       0x50 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
-                0x1006e4b0                mbedtls_cipher_definitions
+                0x1006e498       0x50 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e498                mbedtls_cipher_definitions
  .rodata.str1.4
-                0x1006e500       0x6c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e4e8       0x6c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_256_gcm_info
-                0x1006e500       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e4e8       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_192_gcm_info
-                0x1006e51c       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e504       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_128_gcm_info
-                0x1006e538       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e520       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.gcm_aes_info
-                0x1006e554       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e53c       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_256_cbc_info
-                0x1006e570       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e558       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_192_cbc_info
-                0x1006e58c       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e574       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_128_cbc_info
-                0x1006e5a8       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e590       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_256_ecb_info
-                0x1006e5c4       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e5ac       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_192_ecb_info
-                0x1006e5e0       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e5c8       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_128_ecb_info
-                0x1006e5fc       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e5e4       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.aes_info
-                0x1006e618       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
+                0x1006e600       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/cipher_wrap.c.obj
  .rodata.ecp_x25519_bad_point_2
-                0x1006e634        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
+                0x1006e61c        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
  .rodata.ecp_x25519_bad_point_1
-                0x1006e640        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
+                0x1006e628        0xc CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
  .rodata.x25519_bad_point_2
-                0x1006e64c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
+                0x1006e634       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
  .rodata.x25519_bad_point_1
-                0x1006e66c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
+                0x1006e654       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
  .rodata.str1.4
-                0x1006e68c       0x97 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
+                0x1006e674       0x97 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
  .rodata.ecp_supported_curves
-                0x1006e68c       0x9c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
+                0x1006e674       0x9c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp.c.obj
  .rodata.mbedtls_ecp_group_load
-                0x1006e728       0x34 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e710       0x34 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.curve25519_part_of_n
-                0x1006e75c       0x10 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e744       0x10 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP512r1_n
-                0x1006e76c       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e754       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP512r1_gy
-                0x1006e7ac       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e794       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP512r1_gx
-                0x1006e7ec       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e7d4       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP512r1_b
-                0x1006e82c       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e814       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP512r1_a
-                0x1006e86c       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e854       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP512r1_p
-                0x1006e8ac       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e894       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP384r1_n
-                0x1006e8ec       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e8d4       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP384r1_gy
-                0x1006e91c       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e904       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP384r1_gx
-                0x1006e94c       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e934       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP384r1_b
-                0x1006e97c       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e964       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP384r1_a
-                0x1006e9ac       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e994       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP384r1_p
-                0x1006e9dc       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e9c4       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP256r1_n
-                0x1006ea0c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006e9f4       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP256r1_gy
-                0x1006ea2c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ea14       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP256r1_gx
-                0x1006ea4c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ea34       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP256r1_b
-                0x1006ea6c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ea54       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP256r1_a
-                0x1006ea8c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ea74       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.brainpoolP256r1_p
-                0x1006eaac       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ea94       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256k1_n
-                0x1006eacc       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eab4       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256k1_gy
-                0x1006eaec       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ead4       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256k1_gx
-                0x1006eb0c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eaf4       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256k1_b
-                0x1006eb2c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb14        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256k1_a
-                0x1006eb30        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb18        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256k1_p
-                0x1006eb34       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb1c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224k1_n
-                0x1006eb54       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb3c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224k1_gy
-                0x1006eb74       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb5c       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224k1_gx
-                0x1006eb90       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb78       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224k1_b
-                0x1006ebac        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb94        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224k1_a
-                0x1006ebb0        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb98        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224k1_p
-                0x1006ebb4       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eb9c       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192k1_n
-                0x1006ebd0       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ebb8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192k1_gy
-                0x1006ebe8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ebd0       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192k1_gx
-                0x1006ec00       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ebe8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192k1_b
-                0x1006ec18        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ec00        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192k1_a
-                0x1006ec1c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ec04        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192k1_p
-                0x1006ec20       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ec08       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp521r1_n
-                0x1006ec38       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ec20       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp521r1_gy
-                0x1006ec7c       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ec64       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp521r1_gx
-                0x1006ecc0       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eca8       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp521r1_b
-                0x1006ed04       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ecec       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp521r1_p
-                0x1006ed48       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ed30       0x44 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp384r1_n
-                0x1006ed8c       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ed74       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp384r1_gy
-                0x1006edbc       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eda4       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp384r1_gx
-                0x1006edec       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006edd4       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp384r1_b
-                0x1006ee1c       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ee04       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp384r1_p
-                0x1006ee4c       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ee34       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256r1_n
-                0x1006ee7c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ee64       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256r1_gy
-                0x1006ee9c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ee84       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256r1_gx
-                0x1006eebc       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eea4       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256r1_b
-                0x1006eedc       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eec4       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp256r1_p
-                0x1006eefc       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006eee4       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224r1_n
-                0x1006ef1c       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ef04       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224r1_gy
-                0x1006ef38       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ef20       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224r1_gx
-                0x1006ef54       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ef3c       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224r1_b
-                0x1006ef70       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ef58       0x1c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp224r1_p
-                0x1006ef8c       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ef74       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192r1_n
-                0x1006efac       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006ef94       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192r1_gy
-                0x1006efc4       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006efac       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192r1_gx
-                0x1006efdc       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006efc4       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192r1_b
-                0x1006eff4       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+                0x1006efdc       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
  .rodata.secp192r1_p
-                0x1006f00c       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
- *fill*         0x1006f024        0x4 
- .rodata.last4  0x1006f028       0x80 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/gcm.c.obj
+                0x1006eff4       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ecp_curves.c.obj
+ *fill*         0x1006f00c        0x4 
+ .rodata.last4  0x1006f010       0x80 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/gcm.c.obj
  .rodata.mbedtls_md_info_from_string.str1.4
-                0x1006f0a8       0x2f CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f090       0x2f CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
  .rodata.mbedtls_md_starts
-                0x1006f0a8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f090       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
  .rodata.mbedtls_md
-                0x1006f0c0       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f0a8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
  .rodata.mbedtls_md_hmac_reset
-                0x1006f0d8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f0c0       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
  .rodata.CSWTCH.2
-                0x1006f0f0       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f0d8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
  .rodata.mbedtls_sha512_info
-                0x1006f108        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
-                0x1006f108                mbedtls_sha512_info
+                0x1006f0f0        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f0f0                mbedtls_sha512_info
  .rodata.mbedtls_sha384_info
-                0x1006f110        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
-                0x1006f110                mbedtls_sha384_info
+                0x1006f0f8        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f0f8                mbedtls_sha384_info
  .rodata.mbedtls_sha256_info
-                0x1006f118        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
-                0x1006f118                mbedtls_sha256_info
+                0x1006f100        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f100                mbedtls_sha256_info
  .rodata.mbedtls_sha224_info
-                0x1006f120        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
-                0x1006f120                mbedtls_sha224_info
+                0x1006f108        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f108                mbedtls_sha224_info
  .rodata.mbedtls_sha1_info
-                0x1006f128        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
-                0x1006f128                mbedtls_sha1_info
+                0x1006f110        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f110                mbedtls_sha1_info
  .rodata.mbedtls_md5_info
-                0x1006f130        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
-                0x1006f130                mbedtls_md5_info
+                0x1006f118        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/md.c.obj
+                0x1006f118                mbedtls_md5_info
  .rodata.mbedtls_oid_get_x509_ext_type.str1.4
-                0x1006f138        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f120        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.mbedtls_oid_get_sig_alg_desc.str1.4
-                0x1006f138        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f120        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.mbedtls_oid_get_pk_alg.str1.4
-                0x1006f138        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f120        0xa CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.mbedtls_oid_get_ec_grp.str1.4
-                0x1006f138        0x9 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f120        0x9 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.mbedtls_oid_get_md_alg.str1.4
-                0x1006f138        0x9 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f120        0x9 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.str1.4
-                0x1006f138      0xb61 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f120      0xb61 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.oid_md_alg
-                0x1006f138       0x8c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f120       0x8c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.oid_ecp_grp
-                0x1006f1c4       0xf0 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f1ac       0xf0 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.oid_pk_alg
-                0x1006f2b4       0x50 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f29c       0x50 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.oid_sig_alg
-                0x1006f304      0x118 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+                0x1006f2ec      0x118 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
  .rodata.oid_x509_ext
-                0x1006f41c       0x8c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
- .rodata        0x1006f4a8       0x36 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
- *fill*         0x1006f4de        0x2 
+                0x1006f404       0x8c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+ .rodata        0x1006f490       0x36 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/oid.c.obj
+ *fill*         0x1006f4c6        0x2 
  .rodata.CSWTCH.6
-                0x1006f4e0       0x10 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk.c.obj
+                0x1006f4c8       0x10 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk.c.obj
  .rodata.rsa_debug.str1.4
-                0x1006f4f0        0xe CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
+                0x1006f4d8        0xe CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
  .rodata.eckey_debug.str1.4
-                0x1006f4f0        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
+                0x1006f4d8        0x8 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
  .rodata.str1.4
-                0x1006f4f0       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
+                0x1006f4d8       0x18 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
  .rodata.mbedtls_ecdsa_info
-                0x1006f4f0       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
-                0x1006f4f0                mbedtls_ecdsa_info
+                0x1006f4d8       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
+                0x1006f4d8                mbedtls_ecdsa_info
  .rodata.mbedtls_eckeydh_info
-                0x1006f520       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
-                0x1006f520                mbedtls_eckeydh_info
+                0x1006f508       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
+                0x1006f508                mbedtls_eckeydh_info
  .rodata.mbedtls_eckey_info
-                0x1006f550       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
-                0x1006f550                mbedtls_eckey_info
+                0x1006f538       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
+                0x1006f538                mbedtls_eckey_info
  .rodata.mbedtls_rsa_info
-                0x1006f580       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
-                0x1006f580                mbedtls_rsa_info
+                0x1006f568       0x30 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/pk_wrap.c.obj
+                0x1006f568                mbedtls_rsa_info
  .rodata.memset_func
-                0x1006f5b0        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/platform_util.c.obj
+                0x1006f598        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/platform_util.c.obj
  .rodata.mbedtls_rsa_deduce_primes.str1.4
-                0x1006f5b4       0x37 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/rsa_internal.c.obj
- .rodata.K      0x1006f5b4      0x100 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/sha256.c.obj
- *fill*         0x1006f6b4        0x4 
- .rodata.K      0x1006f6b8      0x280 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/sha512.c.obj
+                0x1006f59c       0x37 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/rsa_internal.c.obj
+ .rodata.K      0x1006f59c      0x100 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/sha256.c.obj
+ *fill*         0x1006f69c        0x4 
+ .rodata.K      0x1006f6a0      0x280 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/sha512.c.obj
  .rodata.mbedtls_x509_parse_subject_alt_name.str1.4
-                0x1006f938        0x9 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/x509_crt.c.obj
- .rodata        0x1006f938        0x5 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/x509_crt.c.obj
+                0x1006f920        0x9 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/x509_crt.c.obj
+ .rodata        0x1006f920        0x5 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/x509_crt.c.obj
  .rodata.str1.4
-                0x1006f93d      0x1b1 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_ciphersuites.c.obj
- *fill*         0x1006f93d        0x3 
+                0x1006f925      0x1b1 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_ciphersuites.c.obj
+ *fill*         0x1006f925        0x3 
  .rodata.ciphersuite_definitions
-                0x1006f940      0x1a0 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_ciphersuites.c.obj
+                0x1006f928      0x1a0 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_ciphersuites.c.obj
  .rodata.mbedtls_ssl_handshake_client_step
-                0x1006fae0       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_cli.c.obj
+                0x1006fac8       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_cli.c.obj
  .rodata.mbedtls_ssl_handshake_server_step
-                0x1006fb20       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_srv.c.obj
+                0x1006fb08       0x40 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_srv.c.obj
  .rodata.ssl_calc_finished_tls_sha256.str1.4
-                0x1006fb60       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_tls.c.obj
+                0x1006fb48       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_tls.c.obj
  .rodata.mbedtls_ssl_derive_keys.str1.4
-                0x1006fb60       0x1e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_tls.c.obj
+                0x1006fb48       0x1e CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/library/ssl_tls.c.obj
  .rodata.mqtt_close.str1.4
-                0x1006fb60       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x1b CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_cyclic_timer.str1.4
-                0x1006fb60       0x22 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x22 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_output_send.str1.4
-                0x1006fb60       0x5d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x5d CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_message_received.str1.4
-                0x1006fb60       0x21 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x21 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_tcp_recv_cb.str1.4
-                0x1006fb60       0x4a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x4a CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_tcp_err_cb.str1.4
-                0x1006fb60       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x20 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_publish.str1.4
-                0x1006fb60       0x71 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x71 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_sub_unsub.str1.4
-                0x1006fb60       0x58 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x58 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_set_inpub_callback.str1.4
-                0x1006fb60       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x28 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_client_connect.str1.4
-                0x1006fb60       0xac CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0xac CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata.mqtt_client_is_connected.str1.4
-                0x1006fb60       0x29 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
+                0x1006fb48       0x29 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
  .rodata._ctype_
-                0x1006fb60      0x101 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-ctype_.o)
-                0x1006fb60                _ctype_
-                0x1006fc64                        . = ALIGN (0x4)
- *fill*         0x1006fc61        0x3 
+                0x1006fb48      0x101 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-ctype_.o)
+                0x1006fb48                _ctype_
+                0x1006fc4c                        . = ALIGN (0x4)
+ *fill*         0x1006fc49        0x3 
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x1006fc64                        . = ALIGN (0x4)
+                0x1006fc4c                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1006fc64                        __exidx_start = .
+                0x1006fc4c                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x1006fc64                        __exidx_end = .
-                0x1006fc64                        . = ALIGN (0x4)
-                0x1006fc64                        __binary_info_start = .
+                0x1006fc4c                        __exidx_end = .
+                0x1006fc4c                        . = ALIGN (0x4)
+                0x1006fc4c                        __binary_info_start = .
 
-.binary_info    0x1006fc64       0x28
+.binary_info    0x1006fc4c       0x28
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr81
-                0x1006fc64        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006fc4c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x1006fc68        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006fc50        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x1006fc6c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006fc54        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x1006fc70        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006fc58        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x1006fc74        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006fc5c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x1006fc78        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006fc60        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x1006fc7c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1006fc64        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
  .binary_info.__bi_ptr34
-                0x1006fc80        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x1006fc68        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr33
-                0x1006fc84        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x1006fc6c        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr182
-                0x1006fc88        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x1006fc8c                        __binary_info_end = .
+                0x1006fc70        0x4 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1006fc74                        __binary_info_end = .
 
-.rel.dyn        0x1006fc8c        0x0
- .rel.iplt      0x1006fc8c        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x1006fc8c                        . = ALIGN (0x4)
+.rel.dyn        0x1006fc74        0x0
+ .rel.iplt      0x1006fc74        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x1006fc74                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -7232,7 +7232,7 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
                 0x20000000       0xc0 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0     0x1560 load address 0x1006fc8c
+.data           0x200000c0     0x1560 load address 0x1006fc74
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -7420,20 +7420,20 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
  *(.jcr)
                 0x20001620                        . = ALIGN (0x4)
                 0x20001620                        __data_end__ = .
-                0x1006fc8c                        __etext = LOADADDR (.data)
+                0x1006fc74                        __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x20001620        0x0 load address 0x100711ec
+                0x20001620        0x0 load address 0x100711d4
  .tm_clone_table
                 0x20001620        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x20001620        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x20001620        0x0 load address 0x100711ec
+.igot.plt       0x20001620        0x0 load address 0x100711d4
  .igot.plt      0x20001620        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x20001620       0x20 load address 0x100711ec
+                0x20001620       0x20 load address 0x100711d4
                 0x20001620                        . = ALIGN (0x4)
  *(.uninitialized_data*)
  .uninitialized_data.rosc_samples
@@ -7443,19 +7443,19 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
  .uninitialized_data.rng_state
                 0x20001630       0x10 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_rand/rand.c.obj
 
-.scratch_x      0x20040000        0x0 load address 0x100711ec
+.scratch_x      0x20040000        0x0 load address 0x100711d4
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x100711ec                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x100711d4                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x100711ec
+.scratch_y      0x20041000        0x0 load address 0x100711d4
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x100711ec                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x100711d4                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .bss            0x20001640     0xc840
                 0x20001640                        . = ALIGN (0x4)
@@ -7832,8 +7832,8 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x100711ec        0x0
-                0x100711ec                        PROVIDE (__flash_binary_end = .)
+.flash_end      0x100711d4        0x0
+                0x100711d4                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -8124,7 +8124,7 @@ LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/libra
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_adc/adc.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
-LOAD /tmp/cct6hqv2.o
+LOAD /tmp/ccq8B42n.o
 LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -8404,7 +8404,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x000015c4       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
  .ARM.attributes
-                0x000015f0       0x22 /tmp/cct6hqv2.o
+                0x000015f0       0x22 /tmp/ccq8B42n.o
  .ARM.attributes
                 0x00001612       0x1e /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
