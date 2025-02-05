@@ -14,8 +14,14 @@
 #include "pico/cyw43_arch.h"
 #include "lwip/apps/mqtt_priv.h"
 #include "hardware/structs/rosc.h"
+#include <stdlib.h>
+#include <ctype.h>
+#include "pico/binary_info.h"
+#include "inc/ssd1306.h"
+#include "hardware/i2c.h"
 
 #define MAX_MACHINES 3
+
 #define WIFI_SSID "teste"
 #define WIFI_PASSWORD "12345678"
 
@@ -65,16 +71,21 @@ extern uint32_t triggered_machine;
 /* FUNÇOES */
 void setup_gpio_interrupts();
 void pwm_init_buzzer(uint pin);
-void play_bell(uint32_t frequency, uint32_t duration_ms);
-void handle_machine_interrupt(uint gpio, uint32_t events);
-
-void init_leds();
-void connection_status_alert(bool success, const char* connection_type);
 int initialize_wifi(const char* ssid, const char* password);
+void init_leds();
+void init_display_oled();
+
 bool process_machine_request();
 bool process_machine_assistance(uint32_t received_id);
+void handle_machine_interrupt(uint gpio, uint32_t events);
+void connection_status_alert(bool success, const char* connection_type);
+
+void play_bell(uint32_t frequency, uint32_t duration_ms);
+
 void update_machines_waiting_times();
 void format_waiting_time(uint32_t milliseconds, char* output);
+
+void display_oled_message(char *line1, char *line2);
 
 static MQTT_CLIENT_T* mqtt_client_init(void);
 void run_dns_lookup(MQTT_CLIENT_T *state);

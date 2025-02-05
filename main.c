@@ -1,7 +1,5 @@
 #include "main.h"
 
-int initialize_wifi(const char* ssid, const char* password);
-
 static MQTT_CLIENT_T* mqtt_client_init(void) {
     MQTT_CLIENT_T *state = calloc(1, sizeof(MQTT_CLIENT_T));
     if (!state) {
@@ -14,6 +12,7 @@ static MQTT_CLIENT_T* mqtt_client_init(void) {
 int main() {
     stdio_init_all();
     init_leds();
+    init_display_oled();
     pwm_init_buzzer(BUZZER_PIN);
     setup_gpio_interrupts();
     int wifi_status = initialize_wifi(WIFI_SSID, WIFI_PASSWORD);

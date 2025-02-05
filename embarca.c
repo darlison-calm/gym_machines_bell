@@ -75,6 +75,7 @@ bool process_machine_assistance(uint32_t received_id) {
     waiting_queue--;
     interrupt_flag = false;
     play_bell(2200, 200);
+    display_oled_message("REALIZADO", machine->name);
     DEBUG_printf("Máquina %d atualizada. Fila de espera: %d\n", machine->id, waiting_queue);
     return true;
 }
@@ -93,6 +94,7 @@ bool process_machine_request() {
 
     // Toca o alarme para indicar o chamado
     play_bell(2000, 200);
+    display_oled_message("AJUDA", machines[triggered_machine].name);
     return true;
 }
 
@@ -116,42 +118,7 @@ void format_waiting_time(uint32_t milliseconds, char* output) {
     // Format the time string without milliseconds
     sprintf(output, "%02u:%02u:%02u", hours, minutes, seconds);
 }
-// Alerta status de conexão WIFI/MQTT pelo LED
-void connection_status_alert(bool success, const char* connection_type) {
-    // Reseta todos os LEDs inicialmente
-    gpio_put(LED_PIN_G, 0);
-    gpio_put(LED_PIN_B, 0);
-    gpio_put(LED_PIN_R, 0);
 
-    // Tratamento de conexão com sucesso
-    if (success) {
-        // Define o LED de acordo com o tipo de conexão
-        int led_pin = LED_PIN_G; // Padrão para conexão desconhecida
-        
-        if (strcmp(connection_type, "wifi") == 0) {
-            led_pin = LED_PIN_B;
-        } else if (strcmp(connection_type, "mqtt") == 0) {
-            led_pin = LED_PIN_G;
-        }
-
-        // Padrão de pulso para conexão bem-sucedida
-        for (int i = 0; i < 2; i++) {
-            gpio_put(led_pin, 1);
-            sleep_ms(500);
-            gpio_put(led_pin, 0);
-            sleep_ms(500);
-        }
-        return;
-    }
-
-    // Tratamento de falha de conexão - padrão de alerta com LED vermelho
-    for (int i = 0; i < 5; i++) {
-        gpio_put(LED_PIN_R, 1);
-        sleep_ms(200);
-        gpio_put(LED_PIN_R, 0);
-        sleep_ms(200);
-    }
-}
 
 
 

@@ -1135,7 +1135,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ELF2UF2Build::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ELF2UF2Build-Release-49c8bbaca2f1108cfb95.json",
+					"jsonFile" : "target-ELF2UF2Build-Release-11dc3e162384941e9ef6.json",
 					"name" : "ELF2UF2Build",
 					"projectIndex" : 0
 				},
@@ -1177,7 +1177,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "wifimqtt::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wifimqtt-Release-e152cda76651cfd05302.json",
+					"jsonFile" : "target-wifimqtt-Release-0ebecb850cb3f8f1eb7f.json",
 					"name" : "wifimqtt",
 					"projectIndex" : 0
 				}

@@ -53,7 +53,9 @@ if (PICO_CYW43_SUPPORTED) # set by BOARD=pico-w
         else()
             add_executable(wifimqtt
             wifimqtt.c
+            inc/ssd1306_i2c.c
             bell_sound.c
+            display_oled.c
             embarca.c
             main.c
             )
@@ -84,6 +86,7 @@ if (PICO_CYW43_SUPPORTED) # set by BOARD=pico-w
                 hardware_pwm
                 hardware_gpio
                 hardware_adc
+                hardware_i2c
             )
 
             pico_add_extra_outputs(wifimqtt

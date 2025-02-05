@@ -175,20 +175,58 @@ int initialize_wifi(const char* ssid, const char* password) {
     }
     // Configura modo Station (cliente)
     cyw43_arch_enable_sta_mode();
-    
+    display_oled_message("CONECTANDO WIFI", "  AGUARDE  ");
     // Tenta conectar ao WiFi (retorna 0 em caso de sucesso)
     int result = cyw43_arch_wifi_connect_timeout_ms(ssid, 
                                                   password, 
                                                   CYW43_AUTH_WPA2_AES_PSK, 
-                                                  20000);
+                                                  10000);
     if (result == 0) {  // Conexão bem sucedida
         DEBUG_printf("WiFi connected successfully!\n");
+        display_oled_message( "  CONEXAO BEM  ", "  SUCEDIDA  ");
         connection_status_alert(true, "wifi");
         return 0;
     } else {  // Falha na conexão
         DEBUG_printf("Failed to connect to WiFi (error: %s)\n", result);
+        display_oled_message( "  FALHA NA  ", "  CONEXAO  ");
         connection_status_alert(false, "wifi");
         return 2;
+    }
+}
+
+// Alerta status de conexão WIFI/MQTT pelo LED
+void connection_status_alert(bool success, const char* connection_type) {
+    // Reseta todos os LEDs inicialmente
+    gpio_put(LED_PIN_G, 0);
+    gpio_put(LED_PIN_B, 0);
+    gpio_put(LED_PIN_R, 0);
+
+    // Tratamento de conexão com sucesso
+    if (success) {
+        // Define o LED de acordo com o tipo de conexão
+        int led_pin = LED_PIN_G; // Padrão para conexão desconhecida
+        
+        if (strcmp(connection_type, "wifi") == 0) {
+            led_pin = LED_PIN_B;
+        } else if (strcmp(connection_type, "mqtt") == 0) {
+            led_pin = LED_PIN_G;
+        }
+        // Padrão de pulso para conexão bem-sucedida
+        for (int i = 0; i < 2; i++) {
+            gpio_put(led_pin, 1);
+            sleep_ms(500);
+            gpio_put(led_pin, 0);
+            sleep_ms(500);
+        }
+        return;
+    }
+
+    // Tratamento de falha de conexão - padrão de alerta com LED vermelho
+    for (int i = 0; i < 5; i++) {
+        gpio_put(LED_PIN_R, 1);
+        sleep_ms(200);
+        gpio_put(LED_PIN_R, 0);
+        sleep_ms(200);
     }
 }
 
