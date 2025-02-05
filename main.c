@@ -14,6 +14,7 @@ static MQTT_CLIENT_T* mqtt_client_init(void) {
 int main() {
     stdio_init_all();
     init_leds();
+    pwm_init_buzzer(BUZZER_PIN);
     setup_gpio_interrupts();
     int wifi_status = initialize_wifi(WIFI_SSID, WIFI_PASSWORD);
 

@@ -4,8 +4,8 @@ static bool interrupt_flag = false;
 
 uint32_t waiting_queue = 0;
 uint32_t triggered_machine = 0;
-
 uint32_t last_debounce_timer[MAX_MACHINES] = {0};
+
 MACHINE machines[MAX_MACHINES] = {
     {"Mesa Flexora", false, BUTTON_PIN_A, 1},
     {"Agachamento no Hack", false, BUTTON_PIN_B, 2},
@@ -19,24 +19,6 @@ void init_leds() {
     gpio_set_dir(LED_PIN_R, GPIO_OUT); 
     gpio_init(LED_PIN_B);
     gpio_set_dir(LED_PIN_B, GPIO_OUT); 
-}
-
-void play_alarm(uint32_t frequency, uint32_t duration_ms) {
-    gpio_set_function(BUZZER_PIN, GPIO_FUNC_PWM);  // Configura o pino do buzzer para PWM
-    uint slice_num = pwm_gpio_to_slice_num(BUZZER_PIN);  // Obtém o slice do PWM
-    uint channel = pwm_gpio_to_channel(BUZZER_PIN);  // Obtém o canal do PWM
-
-    // Configura o PWM para a frequência desejada
-    uint32_t wrap_value = 125000000 / frequency;  // Calcula o valor de wrap
-    pwm_set_wrap(slice_num, wrap_value);
-    pwm_set_chan_level(slice_num, channel, wrap_value / 2);  // Ciclo de trabalho de 50%
-    pwm_set_enabled(slice_num, true);  // Habilita o PWM
-
-    sleep_ms(duration_ms);  
-
-    pwm_set_enabled(slice_num, false);  // Desliga o PWM
-
-    // gpio_set_function(BUZZER_PIN, GPIO_FUNC_SIO);  // Altera a função do pino para entrada, desabilitando o PWM, removendo o chiado depois do som
 }
 
 void handle_machine_interrupt(uint gpio, uint32_t events) {
@@ -67,7 +49,7 @@ void setup_gpio_interrupts() {
     }
 }
 
-void process_machine_assistance(uint32_t received_id) {
+bool process_machine_assistance(uint32_t received_id) {
     // Encontra a máquina correspondente ao ID recebido
     MACHINE *machine = NULL;
     for (int i = 0; i < MAX_MACHINES; i++) {
@@ -79,26 +61,22 @@ void process_machine_assistance(uint32_t received_id) {
     
     // Verifica se a máquina foi encontrada
     if (machine == NULL) {
-        return;
+        return false;
     }
     
     // Verifica se a máquina precisa de assistência
     if (!(machine->needs_assistance)) {
         DEBUG_printf("Máquina %d não precisa de assistência.\n", machine->id);
-        return;
+        return false;
     }
 
-    uint32_t now = to_ms_since_boot(get_absolute_time());
-    
     machine->needs_assistance = false;
     machine->waiting_time = 0;
     waiting_queue--;
     interrupt_flag = false;
-    play_alarm(220, 300);
-    sleep_ms(50);
-    play_alarm(240, 500);
+    play_bell(2200, 200);
     DEBUG_printf("Máquina %d atualizada. Fila de espera: %d\n", machine->id, waiting_queue);
-    return;
+    return true;
 }
 
 bool process_machine_request() {
@@ -114,7 +92,7 @@ bool process_machine_request() {
     machines[triggered_machine].call_timer = to_ms_since_boot(get_absolute_time());
 
     // Toca o alarme para indicar o chamado
-    play_alarm(220, 300);
+    play_bell(2000, 200);
     return true;
 }
 
@@ -138,8 +116,6 @@ void format_waiting_time(uint32_t milliseconds, char* output) {
     // Format the time string without milliseconds
     sprintf(output, "%02u:%02u:%02u", hours, minutes, seconds);
 }
-
-
 // Alerta status de conexão WIFI/MQTT pelo LED
 void connection_status_alert(bool success, const char* connection_type) {
     // Reseta todos os LEDs inicialmente

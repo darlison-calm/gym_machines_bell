@@ -3,7 +3,7 @@
 #define PUB_DELAY_MS 1000
 
 static uint32_t last_status_time = 0;
-static uint32_t STATUS_PUBLISH_INTERVAL = 8000;
+static uint32_t STATUS_PUBLISH_INTERVAL = 10000;
 
 static uint32_t last_time = 0;
 err_t mqtt_test_connect(MQTT_CLIENT_T *state);
