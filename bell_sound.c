@@ -25,7 +25,16 @@ void play_bell(uint32_t frequency, uint32_t duration_ms) {
     pwm_set_wrap(buzzer_slice_num, wrap_value);
     pwm_set_chan_level(buzzer_slice_num, buzzer_channel, wrap_value / 2); // Ciclo de trabalho de 50%
     pwm_set_enabled(buzzer_slice_num, true);
-    sleep_ms(duration_ms);
+    
+    // Toca pelo tempo solicitado menos o tempo do fade
+    sleep_ms(duration_ms - 30);
+    
+    // Fade out em 30ms
+    for (int i = 30; i >= 0; i--) {
+        pwm_set_chan_level(buzzer_slice_num, buzzer_channel, (wrap_value / 2) * i / 50);
+        sleep_ms(1);
+    }
+    
     // Desliga o PWM
     pwm_set_enabled(buzzer_slice_num, false);
 }
