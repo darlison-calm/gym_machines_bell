@@ -108,10 +108,6 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .data          0x00000000        0x0 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .bss           0x00000000        0x0 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
- .text.mqtt_machine_request
-                0x00000000       0x64 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
- .text.mqtt_publish_machine_assistance
-                0x00000000       0xb8 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .text.mqtt_test_connect
                 0x00000000       0x38 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.connection_status_alert.str1.4
@@ -3200,9 +3196,9 @@ Discarded input sections
                 0x00000000       0x48 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_read_timeout_per_char_us
                 0x00000000       0x48 CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
- .text          0x00000000        0x0 /tmp/ccq8B42n.o
- .data          0x00000000        0x0 /tmp/ccq8B42n.o
- .bss           0x00000000        0x0 /tmp/ccq8B42n.o
+ .text          0x00000000        0x0 /tmp/cco105W3.o
+ .data          0x00000000        0x0 /tmp/cco105W3.o
+ .bss           0x00000000        0x0 /tmp/cco105W3.o
  .data          0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
@@ -3499,7 +3495,7 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/ccq8B42n.o
+ .boot2         0x10000000      0x100 /tmp/cco105W3.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -3588,9 +3584,12 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
  .text.mqtt_publish_machine_status
                 0x10000474       0xc4 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
                 0x10000474                mqtt_publish_machine_status
+ .text.mqtt_publish_machine_request
+                0x10000538       0xb8 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x10000538                mqtt_publish_machine_request
  .text.mqtt_run_test
-                0x10000538      0x1ec CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
-                0x10000538                mqtt_run_test
+                0x100005f0      0x134 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x100005f0                mqtt_run_test
  .text.initialize_wifi
                 0x10000724       0xf4 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
                 0x10000724                initialize_wifi
@@ -6489,10 +6488,10 @@ LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/1
                 0x1003664d       0x2c CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.run_dns_lookup.str1.4
                 0x1003664d       0x2e CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
- .rodata.mqtt_machine_request.str1.4
-                0x1003664d       0x70 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_publish_machine_status.str1.4
-                0x1003664d       0x68 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+                0x1003664d       0x80 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
+ .rodata.mqtt_publish_machine_request.str1.4
+                0x1003664d       0x56 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_test_connect.str1.4
                 0x1003664d        0x6 CMakeFiles/wifimqtt.dir/wifimqtt.c.obj
  .rodata.mqtt_run_test.str1.4
@@ -8124,7 +8123,7 @@ LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/mbedtls/libra
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/lib/lwip/src/apps/mqtt/mqtt.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_adc/adc.c.obj
 LOAD CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
-LOAD /tmp/ccq8B42n.o
+LOAD /tmp/cco105W3.o
 LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -8404,7 +8403,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x000015c4       0x2c CMakeFiles/wifimqtt.dir/home/darlison/.pico-sdk/sdk/1.5.1/src/rp2_common/hardware_i2c/i2c.c.obj
  .ARM.attributes
-                0x000015f0       0x22 /tmp/ccq8B42n.o
+                0x000015f0       0x22 /tmp/cco105W3.o
  .ARM.attributes
                 0x00001612       0x1e /home/darlison/.pico-sdk/toolchain/13_3_Rel1/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
