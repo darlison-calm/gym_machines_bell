@@ -4,8 +4,8 @@
 
 static uint32_t last_status_time = 0;
 static uint32_t STATUS_PUBLISH_INTERVAL = 10000;
-
 static uint32_t last_time = 0;
+
 err_t mqtt_test_connect(MQTT_CLIENT_T *state);
 
 void dns_found(const char *name, const ip_addr_t *ipaddr, void *callback_arg) {
@@ -68,19 +68,6 @@ void mqtt_sub_request_cb(void *arg, err_t err) {
     DEBUG_printf("Subscription request status: %d\n", err);
 }
 
-// Função para publicar a solicitação da máquina no MQTT
-err_t mqtt_machine_request(MQTT_CLIENT_T *state) {
-    char buffer[BUFFER_SIZE];
-
-    snprintf(buffer, BUFFER_SIZE,
-        "A máquina '%s' - ID: %d foi chamada para o atendimento. \nTamanho fila de espera: %d.",
-        machines[triggered_machine].name,
-        machines[triggered_machine].id,
-        waiting_queue);
-
-    return mqtt_publish(state->mqtt_client, "pico_w/machine_requests", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
-}
-
 // Função para publicar o status de cada máquina
 err_t mqtt_publish_machine_status(MQTT_CLIENT_T *state) {
     char buffer[BUFFER_SIZE];
@@ -112,8 +99,8 @@ err_t mqtt_publish_machine_status(MQTT_CLIENT_T *state) {
 
     return ERR_OK;
 }
-
-err_t mqtt_publish_machine_assistance(MQTT_CLIENT_T *state) {
+// Função para publicar a solicitação da máquina no MQTT
+err_t mqtt_publish_machine_request(MQTT_CLIENT_T *state) {
     uint32_t now = to_ms_since_boot(get_absolute_time());
 
     // Evita publicações muito frequentes
@@ -123,7 +110,15 @@ err_t mqtt_publish_machine_assistance(MQTT_CLIENT_T *state) {
     
     last_time = now;
     // Publica a mensagem no MQTT
-    return mqtt_machine_request(state);
+    char buffer[BUFFER_SIZE];
+
+    snprintf(buffer, BUFFER_SIZE,
+        "A máquina '%s' - ID: %d foi chamada para o atendimento. \nTamanho fila de espera: %d.",
+        machines[triggered_machine].name,
+        machines[triggered_machine].id,
+        waiting_queue);
+
+    return mqtt_publish(state->mqtt_client, "pico_w/machine_requests", buffer, strlen(buffer), 0, 0, mqtt_pub_request_cb, state);
 }
 
 err_t mqtt_test_connect(MQTT_CLIENT_T *state) {
@@ -150,7 +145,7 @@ void mqtt_run_test(MQTT_CLIENT_T *state) {
 
 
             if (mqtt_client_is_connected(state->mqtt_client)) {
-                mqtt_publish_machine_assistance(state);
+                mqtt_publish_machine_request(state);
 
                 // Publicação periódica de status de cada máquina
                 if (now - last_status_time >= STATUS_PUBLISH_INTERVAL) {
