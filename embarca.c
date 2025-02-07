@@ -33,8 +33,10 @@ void handle_machine_interrupt(uint gpio, uint32_t events) {
         // Verifica debounce
         if (now - last_debounce_timer[i] <= DEBOUNCE_DELAY_MS) continue;
 
-        last_debounce_timer[i] = now; // Atualiza o tempo de debounce
+        last_debounce_timer[i] = now; 
+        // Armazena o índice da máquina que acionou a interrupção
         triggered_machine = i;
+        
         interrupt_flag = true;
         break; // Sai do loop após encontrar a máquina correta        
     }
@@ -97,17 +99,19 @@ bool process_machine_request() {
     display_oled_message("AJUDA", machines[triggered_machine].name);
     return true;
 }
-
+// Atualiza o tempo de espera das máquinas que solicitaram assistência
 void update_machines_waiting_times() {
     uint32_t now = to_ms_since_boot(get_absolute_time());
     
     for (int i = 0; i < MAX_MACHINES; i++) {
         if (machines[i].needs_assistance) {
+            // Calcula o tempo de espera subtraindo o momento da solicitação do tempo atual
             machines[i].waiting_time = now - machines[i].call_timer;
         }
     }
 }
 
+// Formata o tempo em milissegundos para o formato HH:MM:SS
 void format_waiting_time(uint32_t milliseconds, char* output) {
     uint32_t total_seconds = milliseconds / 1000;
     uint32_t hours = total_seconds / 3600;
@@ -115,7 +119,6 @@ void format_waiting_time(uint32_t milliseconds, char* output) {
     uint32_t minutes = remaining / 60;
     uint32_t seconds = remaining % 60;
 
-    // Format the time string without milliseconds
     sprintf(output, "%02u:%02u:%02u", hours, minutes, seconds);
 }
 
